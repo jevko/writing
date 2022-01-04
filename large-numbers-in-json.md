@@ -111,4 +111,5 @@ For somebody reverse-engineering an API which uses strings to encode numbers exp
 [Mangling JSON numbers](https://www.techempower.com/blog/2016/07/05/mangling-json-numbers/)
 
 [[json-minefield]: Parsing JSON is a Minefield, Nicolas Seriot](https://seriot.ch/projects/parsing_json.html)
+
 [[json-vulnerabilities]: An Exploration of JSON Interoperability Vulnerabilities, Jake Miller](https://bishopfox.com/blog/json-interoperability-vulnerabilities) 
