@@ -83,3 +83,32 @@ The problem was remediated as follows:
 > In Twitter APIs up to version 1.1, you should always use the string representation of the number to avoid losing accuracy.
 
 > In newer versions of the API, all large integer values are represented as strings by default.
+
+## Benefits of string-encoded numbers 
+
+### There may be no need to interpret the strings
+
+In the above Twitter example opting for strings is not only a better default, but there may be no need for the alternative.
+
+In cases where we don't do arithmetic on the numbers, there may never be any need to convert the strings to numbers. If we only do comparisons, or process the data in a way which doesn't touch the numbers, strings will work even in an environment which does not support large intergers. We can be sure that they will be correctly interpreted and reserialized.
+
+### Interpretation should be explicit
+
+If we however need to perform operations on the numbers we can convert the strings to a suitable type in a separate step, after parsing JSON. This might work even in JavaScript and other environments which don't have native numbers with enough precision -- we can always use (or in extreme cases write) a bignum library^[N.b. nowadays [support for BigInts is built into JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt).].
+
+### Special casing is unnecessary
+
+Since strings are adequate either way and always work why complicate things and make them needlessly iffy by only representing *large* integers as strings? Instead, represent *all* integers as strings and treat them uniformly. No special cases or explanations needed.
+
+And while we're at it, why not represent non-integers as numbers as well?
+
+### Reverse engineering
+
+For somebody reverse-engineering an API which uses strings to encode numbers explicit communication might not even be necessary. This practice is easy to identify and deal with for humans.
+
+## See also
+
+[Mangling JSON numbers](https://www.techempower.com/blog/2016/07/05/mangling-json-numbers/)
+
+[[json-minefield]: Parsing JSON is a Minefield, Nicolas Seriot](https://seriot.ch/projects/parsing_json.html)
+[[json-vulnerabilities]: An Exploration of JSON Interoperability Vulnerabilities, Jake Miller](https://bishopfox.com/blog/json-interoperability-vulnerabilities) 
