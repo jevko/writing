@@ -31,3 +31,13 @@ And I mean all numbers, not just the special values. Reasons are the same as for
 * Special casing is unnecessary
 
 Simply always use strings and explicitly inform your interchange parties instead of relying on JSON numbers.
+
+## Related links
+
+[golang/go: encoding/json: handle NaN and Inf #3480](https://github.com/golang/go/issues/3480)
+
+[ECMA-262](https://262.ecma-international.org/#sec-json.stringify):
+
+> Finite numbers are stringified as if by calling ToString(number). **NaN and Infinity regardless of sign are represented as the String "null".**
+
+[NaN handling in JSON for Modern C++](https://json.nlohmann.me/features/types/number_handling/#nan-handling)
