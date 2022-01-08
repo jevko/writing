@@ -56,7 +56,7 @@ JSON, being derived from JavaScript's syntax as it was around the year 2000, nat
 
 What then to do if we need to use any of the above in JSON?
 
-The answer is always the same for every data type and format not built into JSON: use strings. And inform your interchange parties how to parse them correctly.
+The answer is always the same for every data type and format not built into JSON: use strings. And [inform your interchange parties how to parse them correctly](https://github.com/xtao-org/writing/blob/main/2022-01-07-meaningful-json.md).
 
 ## Appendix: number grammars vs Infinity and NaN
 
