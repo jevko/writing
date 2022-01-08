@@ -1,6 +1,6 @@
 # IEEE754 numbers in JSON: NaN or Infinity
 
-In [a previous article](/blog/json-semantics.html) I mentioned problems with the number type in JSON.
+In [a previous article](https://xtao.org/blog/json-semantics.html) I mentioned problems with the number type in JSON.
 
 In [another article](https://github.com/xtao-org/loose-blog/blob/35b2b9220dd6f99a3b33628d143a30ffd82f953e/large-numbers-in-json.md) I expanded on the issue of large numbers.
 
