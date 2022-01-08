@@ -1,6 +1,6 @@
 # XML vs JSON trends as of 2022
 
-This article compares populartiy of JSON and XML with three different tools.
+This article compares populartiy of JSON and XML using three different tools.
 
 It was inspired by the chart from the excellent article by [Two-Bit History](https://twobithistory.org/about.html): [The Rise and Rise of JSON](https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html).
 
@@ -19,11 +19,11 @@ The populartiy of XML has been more or less continuously dropping, although it a
 
 This begs the question: whatever hapened (on StackOverflow) in 2018?
 
-JSON took over by the end of 2012. Perhaps this was what averted [the end of the world](https://en.wikipedia.org/wiki/2012_phenomenon)? 🤣
+JSON took over by the end of 2012. Perhaps this is what averted [the end of the world](https://en.wikipedia.org/wiki/2012_phenomenon)? 🤣
 
 ## Google Trends
 
-Links to interactive charts are included below the screenshots. I tested 3 pairs of terms.
+Links to interactive charts are included below the screenshots. I tested 3 different pairs of terms.
 
 <!-- <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2790_RC04/embed_loader.js"></script>
 <script type="text/javascript">
@@ -84,7 +84,7 @@ Links to interactive charts are included below the screenshots. I tested the sam
 
 ### Interpretation
 
-This data stretches over a larger timespan, although it is not as accurate as above (tinkering with the interactive versions is encouraged). The latest data is from 2019. 
+This data stretches over a larger timespan, going back to the beginnings of both XML and JSON. However it is not as accurate as above and the latest data is from 2019. Tinkering with the interactive versions is encouraged. 
 
 It seems that when the latest version of XML was released 15 years ago, it was already well past its peak popularity which has been continuously declining since.
 
@@ -98,7 +98,7 @@ Analyzing StackOverflow and Google trends it is clear that XML has been steadily
 
 Meanwhile JSON has been mostly growing, surpasing its predecessor. It is rightly replacing XML in all domains except text markup, and especially in data interchange. 
 
-Perhaps recently though JSON have been stagnating.
+Perhaps recently though JSON have been stagnating, having recently undergone (inexplicable?) drops in popularity.
 
 Maybe time has come for [something new](https://jevko.org)?
 
