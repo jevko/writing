@@ -70,3 +70,6 @@ The fact that JavaScript allows doing dangerous things like these is an issue wi
 
 In fact Infinity and NaN are not part of the number grammar not only in JavaScript but in other programming languages as well, in particular C or Java. Instead these special values can be accessed via a variable or a macro. This is however a technicality irrelevant from the point of view of syntax which would remain identical if the variable/macro identifiers were made part of the number grammar.
 
+***
+
+© 2022 Darius J Chuck
