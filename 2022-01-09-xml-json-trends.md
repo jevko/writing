@@ -101,3 +101,7 @@ Meanwhile JSON has been mostly growing, surpasing its predecessor. It is rightly
 Perhaps recently though JSON have been stagnating, having recently undergone (inexplicable?) drops in popularity.
 
 Maybe time has come for [something new](https://jevko.org)?
+
+***
+
+© 2022 Darius J Chuck
