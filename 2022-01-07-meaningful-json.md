@@ -38,3 +38,4 @@ We haven't defined the semantics for the entire object itself, so we don't know 
 Another thing we see here is that we used JSON strings to represent data types which are not built into JSON such as dates ("from", "thru") and e-mail addresses ("emails").
 
 We also chose to represent a 64-bit integer ("id") with a string rather than a JSON number, because JSON numbers can cause interoperability problems, [especially in this case](https://github.com/xtao-org/loose-blog/blob/82b5f677d2c84a3a20ee9d76534b68aa9c1649f0/large-numbers-in-json.md).
+
