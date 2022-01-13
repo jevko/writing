@@ -113,3 +113,7 @@ For somebody reverse-engineering an API which uses strings to encode numbers exp
 [[json-minefield]: Parsing JSON is a Minefield, Nicolas Seriot](https://seriot.ch/projects/parsing_json.html)
 
 [[json-vulnerabilities]: An Exploration of JSON Interoperability Vulnerabilities, Jake Miller](https://bishopfox.com/blog/json-interoperability-vulnerabilities) 
+
+***
+
+© 2022 Darius J Chuck
