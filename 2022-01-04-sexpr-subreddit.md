@@ -7,3 +7,7 @@ Announcement: I started a specialized subreddit: [r/sexpr](https://www.reddit.co
 A caffeinated experiment for 2022 to take "start a subreddit" off the bucketlist, spiting the coronavirus.
 
 Maybe another round of caffeine or serendipity will make it go forward. Maybe not.
+
+***
+
+© 2022 Darius J Chuck
