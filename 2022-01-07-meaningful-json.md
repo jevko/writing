@@ -39,3 +39,6 @@ Another thing we see here is that we used JSON strings to represent data types w
 
 We also chose to represent a 64-bit integer ("id") with a string rather than a JSON number, because JSON numbers can cause interoperability problems, [especially in this case](https://github.com/xtao-org/loose-blog/blob/82b5f677d2c84a3a20ee9d76534b68aa9c1649f0/large-numbers-in-json.md).
 
+***
+
+© 2022 Darius J Chuck
