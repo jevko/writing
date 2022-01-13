@@ -69,3 +69,4 @@ From this point of view JSON number grammar is not a subset of JavaScript number
 The fact that JavaScript allows doing dangerous things like these is an issue with JavaScript, and should not be relevant from the perspective of JSON which is supposed to be a *language-independent* syntax.
 
 In fact Infinity and NaN are not part of the number grammar not only in JavaScript but in other programming languages as well, in particular C or Java. Instead these special values can be accessed via a variable or a macro. This is however a technicality irrelevant from the point of view of syntax which would remain identical if the variable/macro identifiers were made part of the number grammar.
+
