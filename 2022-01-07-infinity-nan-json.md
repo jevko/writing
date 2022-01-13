@@ -41,3 +41,4 @@ Simply always use strings and explicitly inform your interchange parties instead
 > Finite numbers are stringified as if by calling ToString(number). **NaN and Infinity regardless of sign are represented as the String "null".**
 
 [NaN handling in JSON for Modern C++](https://json.nlohmann.me/features/types/number_handling/#nan-handling)
+
