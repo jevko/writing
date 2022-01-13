@@ -52,3 +52,6 @@ In other words the string serializes the tree in such a way that:
 * First: each child node is visited to serialize the label of the arrow that connects it with the parent (preorder traversal)
 * Second: only after all child node arrow labels have been serialized is the parent node label serialized (postorder traversal)
 
+***
+
+© 2022 Darius J Chuck
