@@ -35,3 +35,7 @@ Almost as many as JSON plus a few more!
 ## Conclusion
 
 Hm, looks like there is no short answer. Let's sleep on it and try again tomorrow.
+
+***
+
+© 2022 Darius J Chuck
