@@ -42,3 +42,6 @@ Simply always use strings and explicitly inform your interchange parties instead
 
 [NaN handling in JSON for Modern C++](https://json.nlohmann.me/features/types/number_handling/#nan-handling)
 
+***
+
+© 2022 Darius J Chuck
