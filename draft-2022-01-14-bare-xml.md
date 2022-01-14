@@ -217,7 +217,25 @@ Which is compatible with the cannonical [Jevko syntax](https://jevko.org).
 
 Now, let's add some colors:
 
-<img src="img/2022-01-14-pretty-xml.png" />
+<!-- <img src="img/2022-01-14-pretty-xml.png" /> -->
+
+<style type="text/css">
+    .P1 { color:#2a6099; }
+    .T2 { color:#729fcf; }
+    .T24 { color:#ffffff; }
+    .T26 { color:#ffffff; background-color:#1c1c1c; }
+    .T27 { color:#ffffff; background-color:transparent; }
+    .T28 { background-color:#1c1c1c; }
+    .T29 { color:#ffb66c; }
+    .T3 { color:#729fcf; background-color:#1c1c1c; }
+    .T31 { color:#b4c7dc; }
+    .pretty p {
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+</style>
+    
+<pre class="pretty" style="background-color:#000000;"><p class="P1"><span class="T2">?xml</span> <span class="T31">version</span><span class="T29">[1.0]</span> <span class="T31">encoding</span><span class="T29">[UTF-8]</span>?</p><p class="P1"><span class="T2">book</span> <span class="T31">xml:id</span><span class="T29">[simple_book]</span> <span class="T31">xmlns</span><span class="T29">[http://docbook.org/ns/docbook]</span> <span class="T31">version</span><span class="T29">[5.0]</span>[</p><p class="P1">  <span class="T2">title</span>[<span class="T24">Very simple book</span>]</p><p class="P1">  <span class="T2">chapter</span> <span class="T31">xml:id</span><span class="T29">[chapter_1]</span>[</p><p class="P1">    <span class="T2">title</span>[<span class="T24">Chapter 1</span>]</p><p class="P1">    <span class="T2">para</span>[<span class="T24">Hello world!</span>]</p><p class="P1">    <span class="T2">para</span><span class="T27">^</span>[<span class="T26">I hope that your day is proceeding </span><span class="T28">[</span><span class="T3">emphasis</span><span class="T28">][</span><span class="T26">splendidly</span><span class="T28">]</span><span class="T26">!</span>]</p><p class="P1">  ]</p><p class="P1">  <span class="T2">chapter</span> <span class="T31">xml:id</span><span class="T29">[chapter_2]</span>[</p><p class="P1">    <span class="T2">title</span>[<span class="T24">Chapter 2</span>]</p><p class="P1">    <span class="T2">para</span>[<span class="T24">Hello again, world!</span>]</p><p class="P1">  ]</p><p class="P1">]</p></pre>
 
 and compare again:
 
