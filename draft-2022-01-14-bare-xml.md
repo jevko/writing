@@ -211,7 +211,7 @@ book xml:id[simple_book] xmlns[http://docbook.org/ns/docbook] version[5.0][
 ]
 ```
 
-Which is compatible with the cannonical [Jevko syntax](https://jevko.org).
+Which is compatible with the canonical [Jevko syntax](https://jevko.org).
 
 ## Going pretty
 
