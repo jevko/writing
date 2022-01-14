@@ -1,8 +1,8 @@
-# Bare-butt XML
+# Draft: Bare-butt XML
 
 In this article I break down how the XML syntax can be reduced to a minimal essence. In a few steps we will end up with a much simpler syntax which is still human-readable and at the same time much more efficient for machines to process. It is trivially mappable to XML and [DOM](https://en.wikipedia.org/wiki/Document_Object_Model), so existing knowledge and tools can be leveraged when working with it. To do that would be to take a step towards realizing a [mad vision of total intercommunication of all software systems](2022-01-13-vision.md).
 
-// Translating from XML to our format we accept loss of inessential information, such as the positions of `=` in attribute syntax or the exact location of XML entities. 
+<!-- // Translating from XML to our format we accept loss of inessential information, such as the positions of `=` in attribute syntax or the exact location of XML entities.  -->
 
 ## Closing tags
 
@@ -164,7 +164,7 @@ This gives us a nearly 20% reduction compared to the sample above.
 In this case there is a way to have our cake and eat it too. We can reintroduce the mixed-content elements via a special syntax:
 
 ```
-?xml version<1.0> encoding<UTF-8>?
+?xml version<1.0> encoding<UTF-8>
 book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
   title<Very simple book>
   chapter xml:id<chapter_1><
@@ -196,7 +196,7 @@ To avoid confusion with XML proper and cut the number of keypresses needed to en
 This turns our sample into:
 
 ```
-?xml version[1.0] encoding[UTF-8]?
+?xml version[1.0] encoding[UTF-8]
 book xml:id[simple_book] xmlns[http://docbook.org/ns/docbook] version[5.0][
   title[Very simple book]
   chapter xml:id[chapter_1][
@@ -215,9 +215,31 @@ Which is compatible with the cannonical [Jevko syntax](https://jevko.org).
 
 ## Going pretty
 
+Now, let's add some colors:
 
-## Conclusion
+<img src="img/2022-01-14-pretty-xml.png" />
 
+and compare again:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<book xml:id="simple_book" xmlns="http://docbook.org/ns/docbook" version="5.0">
+  <title>Very simple book</title>
+  <chapter xml:id="chapter_1">
+    <title>Chapter 1</title>
+    <para>Hello world!</para>
+    <para>I hope that your day is proceeding <emphasis>splendidly</emphasis>!</para>
+  </chapter>
+  <chapter xml:id="chapter_2">
+    <title>Chapter 2</title>
+    <para>Hello again, world!</para>
+  </chapter>
+</book>
+```
+
+Not too bad if you ask me.
+
+<!-- ## Conclusion -->
 
 <!-- 369/458
 0.8056768558951966
