@@ -1,4 +1,4 @@
-# Draft: Bare-butt XML
+# Draft: Bare-bones XML
 
 In this article I break down how the XML syntax can be reduced to a minimal essence. In a few steps we will end up with a much simpler syntax which is still human-readable and at the same time much more efficient for machines to process. It is trivially mappable to XML and [DOM](https://en.wikipedia.org/wiki/Document_Object_Model), so existing knowledge and tools can be leveraged when working with it. To do that would be to take a step towards realizing a [mad vision of total intercommunication of all software systems](2022-01-13-vision.md).
 
@@ -29,7 +29,7 @@ Let's look at an example [(source)](https://en.wikipedia.org/wiki/DocBook#Sample
 To get rid of the closing tags we can rewrite it like this:
 
 ```
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8">
 <book xml:id="simple_book" xmlns="http://docbook.org/ns/docbook" version="5.0"><
   <title><Very simple book>
   <chapter xml:id="chapter_1"><
@@ -46,9 +46,11 @@ To get rid of the closing tags we can rewrite it like this:
 
 This is no longer valid XML, but it looks quite similar and it has identical logical structure. The original XML can be recreated from it exactly.
 
-With this transformation we went from 458 to 395 characters, losslessly reducing the size of the data by almost 14%.
+With this transformation we went from 458 to 395 characters, losslessly reducing the size of the data by 14%.
 
-<!-- 395/458 = 0.8624454148471615 -->
+<!-- 394/458
+0.8602620087336245
+ -->
 
 ## Quote marks and equals signs
 
@@ -62,7 +64,7 @@ We can reduce that by 40%, by getting rid of the apostrophe and the quote mark. 
 Once we do that, our data looks like this:
 
 ```
-<?xml version<1.0> encoding<UTF-8>?>
+<?xml version<1.0> encoding<UTF-8>>
 <book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0>><
   <title><Very simple book>
   <chapter xml:id<chapter_1>><
@@ -77,7 +79,7 @@ Once we do that, our data looks like this:
 >
 ```
 
-We didn't have very many attributes here, so the gain is not substantial for our sample (we are now at just over size 15% reduction). However for XML with a lot of attributes and/or escapes the gain will grow significantly. Particularly, every `&apos;` and `&quot;` will turn into `'` and `"` -- that's 5 characters saved for each occurence. Plus readability and convenience are significantly improved.
+We didn't have very many attributes here, so the gain is not substantial for our sample (we are now at just over 15% reduction). However for XML with a lot of attributes and/or escapes the gain will grow significantly. Particularly, every `&apos;` and `&quot;` will turn into `'` and `"` -- that's 5 characters saved for each occurence. Plus readability and convenience are significantly improved.
 
 ## Entities
 
@@ -133,12 +135,12 @@ If we cut out ` <emphasis>splendidly</emphasis>` from our sample, we get:
 </book>
 ```
 
-This way we got rid of all mixed content in our XML. In fact most XML used for data interchange (as opposed to text markup) avoids it, because, by the XML spec[[1]](https://www.w3.org/TR/xml/#sec-mixed-content) it is impossible to place the same constraints at mixed content elements as on regular elements.
+This way we got rid of all mixed content in our XML. In fact most XML used for data interchange (as opposed to text markup) avoids it, because, by the XML spec[[1]](https://www.w3.org/TR/xml/#sec-mixed-content) it is impossible to place the same constraints on mixed content elements as on regular elements.
 
 If we constrain ourselves to a subset of XML which forbids mixed content, we can reduce the size of our data further, by getting rid of the brackets around opening tags:
 
 ```
-?xml version<1.0> encoding<UTF-8>
+<?xml version<1.0> encoding<UTF-8>>
 book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
   title<Very simple book>
   chapter xml:id<chapter_1><
@@ -153,18 +155,19 @@ book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
 >
 ```
 
-This gives us a nearly 20% reduction compared to the sample above.
+This gives us a nearly 19% reduction compared to the sample above.
 
-<!-- 344/426
-0.8075117370892019 -- almost 20 % -->
+<!-- 346/426
+0.812206572769953
+ -->
 
 
-## Going back: special treatment of mixed content
+## Going back: mixed content toggle
 
 In this case there is a way to have our cake and eat it too. We can reintroduce the mixed-content elements via a special syntax:
 
 ```
-?xml version<1.0> encoding<UTF-8>
+<?xml version<1.0> encoding<UTF-8>>
 book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
   title<Very simple book>
   chapter xml:id<chapter_1><
@@ -183,7 +186,11 @@ Here the `^` in `para^` is a toggle which enables mixed content mode for the `pa
 
 Plus we could easily implement selective switch back to no-mixed-content for all tags with names followed by the `^` toggle. Win-win?
 
-Compared to the original sample we are again very close to a 20% reduction in size.
+Compared to the original sample we are very close to a 20% reduction in size.
+
+<!-- 370/458
+0.8078602620087336
+ -->
 
 ## Going ergonomic
 
@@ -196,7 +203,7 @@ To avoid confusion with XML proper and cut the number of keypresses needed to en
 This turns our sample into:
 
 ```
-?xml version[1.0] encoding[UTF-8]
+[?xml version[1.0] encoding[UTF-8]]
 book xml:id[simple_book] xmlns[http://docbook.org/ns/docbook] version[5.0][
   title[Very simple book]
   chapter xml:id[chapter_1][
@@ -257,7 +264,9 @@ and compare again:
 
 Not too bad if you ask me.
 
-<!-- ## Conclusion -->
+## Conclusion
+
+20
 
 <!-- 369/458
 0.8056768558951966
@@ -266,3 +275,7 @@ Not too bad if you ask me.
 ## See also
 
 [Jevko as ultra-compact XML](2022-01-13-xml.md)
+
+***
+
+© 2022 Darius J Chuck
