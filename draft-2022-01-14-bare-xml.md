@@ -58,8 +58,8 @@ The XML syntax has 5 special characters which may require escaping[[1]](https://
 
 We can reduce that by 40%, by getting rid of the apostrophe and the quote mark. How do we do that? We simplify the attribute syntax, like so:
 
-1. We replace all `=` followed by opening `"` by `<`.
-2. We replace all closing `"` by `>`.
+1. We replace all `=` followed by opening `"` with `<`.
+2. We replace all closing `"` with `>`.
 
 Once we do that, our data looks like this:
 
