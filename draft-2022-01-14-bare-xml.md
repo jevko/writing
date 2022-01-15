@@ -140,7 +140,7 @@ This way we got rid of all mixed content in our XML. In fact most XML used for d
 If we constrain ourselves to a subset of XML which forbids mixed content, we can reduce the size of our data further, by getting rid of the brackets around opening tags:
 
 ```
-<?xml version<1.0> encoding<UTF-8>>
+?xml<version<1.0> encoding<UTF-8>>
 book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
   title<Very simple book>
   chapter xml:id<chapter_1><
@@ -155,10 +155,10 @@ book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
 >
 ```
 
-This gives us a nearly 19% reduction compared to the sample above.
+This gives us a 19% reduction compared to the sample above.
 
-<!-- 346/426
-0.812206572769953
+<!-- 345/426
+0.8098591549295775
  -->
 
 
@@ -167,7 +167,7 @@ This gives us a nearly 19% reduction compared to the sample above.
 In this case there is a way to have our cake and eat it too. We can reintroduce the mixed-content elements via a special syntax:
 
 ```
-<?xml version<1.0> encoding<UTF-8>>
+?xml<version<1.0> encoding<UTF-8>>
 book xml:id<simple_book> xmlns<http://docbook.org/ns/docbook> version<5.0><
   title<Very simple book>
   chapter xml:id<chapter_1><
@@ -188,8 +188,8 @@ Plus we could easily implement selective switch back to no-mixed-content for all
 
 Compared to the original sample we are very close to a 20% reduction in size.
 
-<!-- 370/458
-0.8078602620087336
+<!-- 369/458
+0.8056768558951966
  -->
 
 ## Going ergonomic
@@ -203,7 +203,7 @@ To avoid confusion with XML proper and cut the number of keypresses needed to en
 This turns our sample into:
 
 ```
-[?xml version[1.0] encoding[UTF-8]]
+?xml[version[1.0] encoding[UTF-8]]
 book xml:id[simple_book] xmlns[http://docbook.org/ns/docbook] version[5.0][
   title[Very simple book]
   chapter xml:id[chapter_1][
