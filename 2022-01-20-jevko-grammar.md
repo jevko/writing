@@ -27,7 +27,7 @@ Escape = "`" ("`" / "[" / "]")
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 ```
 
-It matches the same strings as the low-level grammar, except that it produces useful parse trees.
+It matches the same strings as the low-level grammar, except that it produces parse trees which have useful structure.
 
 ## Getting from the low level to the high level grammar
 
