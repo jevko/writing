@@ -21,7 +21,8 @@ Suffix = Text
 Prefix = Text
 
 ; text
-Text = *(Escape / Char)
+Text = *Unit
+Unit = Escape / Char
 Escape = "`" ("`" / "[" / "]")
 ; Char is any Unicode character except the three special characters: "`" / "[" / "]"
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
@@ -31,14 +32,36 @@ It matches the same strings as the low-level grammar, except that it produces pa
 
 ## Getting from the low level to the high level grammar
 
-To get from the low-level grammar to the high-level one, first we extract the **`Text`** rule from `Jevko`:
+To get from the low-level grammar to the high-level one, first we extract the **`Unit`** rule from `Jevko`:
+
+```abnf
+Jevko = *("[" Jevko "]" / Unit)
+Unit = "`" ("`" / "[" / "]") / %x0-5a / %x5c / %x5e-5f / %x61-10ffff
+```
+
+The `Unit` rule can then be divided into the **`Escape`** and **`Char`** rules:
+
+```abnf
+Unit = Escape / Char
+Escape = "`" ("`" / "[" / "]")
+Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
+```
+
+where Char means any Unicode character except the three special characters: `` "`" / "[" / "]" ``.
+
+We want to cluster consecutive `Unit`s together to form **`Text`**
+
+```abnf
+Text = *Unit
+```
+
+However if we now substitute `Unit` with `Text`:
 
 ```abnf
 Jevko = *("[" Jevko "]" / Text)
-Text = *("`" ("`" / "[" / "]") / %x0-5a / %x5c / %x5e-5f / %x61-10ffff)
 ```
 
-This grammar is however only unambiguous if the `Text` rule is greedy.
+our grammar becomes ambiguous, unless we stipulate that the `Text` rule is greedy.
 
 There are two ways to remove the ambiguity:
 
@@ -75,33 +98,7 @@ Subjevko = Prefix "[" Jevko "]"
 Prefix = Text
 ```
 
-arriving at a grammar which looks like this:
-
-```abnf
-Jevko = *Subjevko Suffix
-Suffix = Text
-Subjevko = Prefix "[" Jevko "]"
-Prefix = Text
-Text = *("`" ("`" / "[" / "]") / %x0-5a / %x5c / %x5e-5f / %x61-10ffff)
-```
-
-From there we extract the **`Escape`** rule from `Text`:
-
-```abnf
-Text = *(Escape / %x0-5a / %x5c / %x5e-5f / %x61-10ffff)
-Escape = "`" ("`" / "[" / "]")
-```
-
-then we extract the **`Char`** rule, also from `Text`:
-
-```abnf
-Text = *(Escape / Char)
-Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
-```
-
-`Char` then means any Unicode character except the three special characters: `` `[] ``.
-
-This way we arrive at the final high-level grammar:
+arriving at the final high-level grammar:
 
 ```abnf
 ; basic structures
@@ -114,7 +111,8 @@ Suffix = Text
 Prefix = Text
 
 ; text
-Text = *(Escape / Char)
+Text = *Unit
+Unit = Escape / Char
 Escape = "`" ("`" / "[" / "]")
 ; Char is any Unicode character except the three special characters: "`" / "[" / "]"
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
