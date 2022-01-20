@@ -31,7 +31,7 @@ It matches the same strings as the low-level grammar, except that it produces pa
 
 ## Getting from the low level to the high level grammar
 
-To get from the low-level grammar to the high-level one, first we fold it into a clearer form by extracting the `Text` rule:
+To get from the low-level grammar to the high-level one, first we extract the **`Text`** rule from `Jevko`:
 
 ```abnf
 Jevko = *("[" Jevko "]" / Text)
@@ -52,9 +52,9 @@ or:
 Jevko = *(Text "[" Jevko "]") Text
 ```
 
-The second way produces parse trees which are more convenient to process in most contexts, so it is be used as a basis for the high-level grammar which is built from it as follows.
+The second way produces parse trees which are more convenient to process in most contexts, so we pick it and continue.
 
-First we extract the parenthesized part of the `Jevko` rule into the **`Subjevko`** rule:
+Now we extract the parenthesized part of the `Jevko` rule into the **`Subjevko`** rule:
 
 ```abnf
 Jevko = *Subjevko Text
@@ -101,7 +101,7 @@ Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 
 `Char` then means any Unicode character except the three special characters: `` `[] ``.
 
-This way we arrive at the final grammar:
+This way we arrive at the final high-level grammar:
 
 ```abnf
 ; basic structures
