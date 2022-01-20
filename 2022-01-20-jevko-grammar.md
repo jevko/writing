@@ -43,7 +43,7 @@ Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 
 `Char` means any Unicode character except the three special characters: `` "`" / "[" / "]" ``.
 
-We want to cluster consecutive `Char`s and `Escape`s together to form **`Text`**
+We want to cluster consecutive `Char`s and `Escape`s together to form **`Text`**:
 
 ```abnf
 Text = *(Escape / Char)
@@ -85,7 +85,7 @@ Subjevko = Prefix "[" Jevko "]"
 Prefix = Text
 ```
 
-and we alias `Text` in the `Jevko` to **`Suffix`**:
+then we alias `Text` in `Jevko` to **`Suffix`**:
 
 ```abnf
 Jevko = *Subjevko Suffix
