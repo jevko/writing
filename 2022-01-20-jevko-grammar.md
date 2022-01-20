@@ -31,16 +31,13 @@ It matches the same strings as the low-level grammar, except that it produces pa
 
 ## Getting from the low level to the high level grammar
 
-To get from the low-level grammar to the high-level one, first we extract three new rules from `Jevko`: **`Subjevko`**, **`Escape`**, and **`Char`**.
+To get from the low-level grammar to the high-level one, first we extract the **`Escape`**, and **`Char`** rules from `Jevko`:
 
 ```abnf
-Jevko = *(Subjevko / Escape / Char)
-Subjevko = "[" Jevko "]"
+Jevko = *("[" Jevko "]" / Escape / Char)
 Escape = "`" ("`" / "[" / "]")
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 ```
-
-`Subjevko` is the recursive rule which captures nested `Jevko`s.
 
 `Escape` is to make the brackets `[` and `]` function as part of `Text`. For this we use a special escape character `` ` `` which therefore needs to be escaped as well.
 
@@ -81,18 +78,25 @@ Jevko = *Subjevko Text
 Subjevko = Text "[" Jevko "]"
 ```
 
-next we alias `Text` in the `Jevko` rule to **`Suffix`**:
+next we alias `Text` in `Subjevko` to **`Prefix`**:
+
+```abnf
+Subjevko = Prefix "[" Jevko "]"
+Prefix = Text
+```
+
+and we alias `Text` in the `Jevko` to **`Suffix`**:
 
 ```abnf
 Jevko = *Subjevko Suffix
 Suffix = Text
 ```
 
-and we alias `Text` in `Subjevko` to **`Prefix`**:
+finally we alias `*Subjevko` to **`Subjevkos`**:
 
-```abnf
-Subjevko = Prefix "[" Jevko "]"
-Prefix = Text
+```
+Jevko = Subjevkos Suffix
+Subjevkos = *Subjevko
 ```
 
 arriving at the final high-level grammar:
@@ -113,3 +117,7 @@ Escape = "`" ("`" / "[" / "]")
 ; Char is any Unicode character except the three special characters: "`" / "[" / "]"
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 ```
+
+***
+
+© 2022 Darius J Chuck
