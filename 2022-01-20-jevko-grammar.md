@@ -21,8 +21,7 @@ Suffix = Text
 Prefix = Text
 
 ; text
-Text = *Unit
-Unit = Escape / Char
+Text = *(Escape / Char)
 Escape = "`" ("`" / "[" / "]")
 ; Char is any Unicode character except the three special characters: "`" / "[" / "]"
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
@@ -32,30 +31,28 @@ It matches the same strings as the low-level grammar, except that it produces pa
 
 ## Getting from the low level to the high level grammar
 
-To get from the low-level grammar to the high-level one, first we extract the **`Unit`** rule from `Jevko`:
+To get from the low-level grammar to the high-level one, first we extract three new rules from `Jevko`: **`Subjevko`**, **`Escape`**, and **`Char`**.
 
 ```abnf
-Jevko = *("[" Jevko "]" / Unit)
-Unit = "`" ("`" / "[" / "]") / %x0-5a / %x5c / %x5e-5f / %x61-10ffff
-```
-
-The `Unit` rule can then be divided into the **`Escape`** and **`Char`** rules:
-
-```abnf
-Unit = Escape / Char
+Jevko = *(Subjevko / Escape / Char)
+Subjevko = "[" Jevko "]"
 Escape = "`" ("`" / "[" / "]")
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 ```
 
-where Char means any Unicode character except the three special characters: `` "`" / "[" / "]" ``.
+`Subjevko` is the recursive rule which captures nested `Jevko`s.
 
-We want to cluster consecutive `Unit`s together to form **`Text`**
+`Escape` is to make the brackets `[` and `]` function as part of `Text`. For this we use a special escape character `` ` `` which therefore needs to be escaped as well.
+
+`Char` means any Unicode character except the three special characters: `` "`" / "[" / "]" ``.
+
+We want to cluster consecutive `Char`s and `Escape`s together to form **`Text`**
 
 ```abnf
-Text = *Unit
+Text = *(Escape / Char)
 ```
 
-However if we now substitute `Unit` with `Text`:
+However if we simply substitute `Escape / Char` with `Text`:
 
 ```abnf
 Jevko = *("[" Jevko "]" / Text)
@@ -111,8 +108,7 @@ Suffix = Text
 Prefix = Text
 
 ; text
-Text = *Unit
-Unit = Escape / Char
+Text = *(Escape / Char)
 Escape = "`" ("`" / "[" / "]")
 ; Char is any Unicode character except the three special characters: "`" / "[" / "]"
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
