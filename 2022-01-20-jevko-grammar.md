@@ -1,14 +1,14 @@
 # The low and high level Jevko grammars
 
-The simplest grammar able to match [Jevko](https://jevko.org) can fit in one line of [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus-Naur_form):
+The simplest grammar able to match [Jevko](https://jevko.org) can fit into one line of [ABNF](https://en.wikipedia.org/wiki/Augmented_Backus-Naur_form):
 
 ```abnf
 Jevko = *("[" Jevko "]" / "`" ("`" / "[" / "]") / %x0-5a / %x5c / %x5e-5f / %x61-10ffff)
 ```
 
-This low-level grammar is enough to build a Jevko validator. It may also be useful for building low-level or streaming parsers which signal parse events without building a parse tree, instead optionally delegating this work to higher levels.
+This **low-level grammar** is enough to build a Jevko validator. It may also be useful for building low-level or streaming parsers which signal parse events without building a parse tree, instead optionally delegating this work to higher levels.
 
-To implement a higher-level parser which does construct useful parse trees, the following high-level grammar is more suitable:
+To implement a higher-level parser which does construct useful parse trees, the following **high-level grammar** is more suitable:
 
 ```abnf
 ; basic structures
