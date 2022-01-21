@@ -39,7 +39,7 @@ Escape = "`" ("`" / "[" / "]")
 Char = %x0-5a / %x5c / %x5e-5f / %x61-10ffff
 ```
 
-`Escape` is to make the brackets `[` and `]` function as part of `Text`. For this we use a special escape character `` ` `` which therefore needs to be escaped as well.
+`Escape` is to make the brackets `[` and `]` function as part of `Text`. For this we use a special escape character `` ` `` which needs to be escaped as well.
 
 `Char` means any Unicode character except the three special characters: `` "`" / "[" / "]" ``.
 
