@@ -109,11 +109,13 @@ is relatively straightforward.
 
 These two objects are compatible as to property names -- only the values are of different types. If in the initial design we assumed the `id` property to have a string value, we can simply relax this constraint to "string or object" to preserve backwards-compatibility.
 
-Since there is no way to assign an XML structure to an XML attribute, we might do something like this:
+In XML things are more complicated. If we start like this:
 
 ```xml
 <element id="123" />
 ```
+
+We can't assign an XML structure to the attribute. Instead we might do something like this:
 
 ```xml
 <element>
@@ -123,7 +125,7 @@ Since there is no way to assign an XML structure to an XML attribute, we might d
 
 which is a significant syntactic and structural change and makes the two elements incompatible without employing more advanced mechanisms.
 
-And we are back to the same problem if we a need arises to add structure to the `provider` attribute.
+And we are back to the same problem if a need arises to add structure to the `provider` attribute.
 
 Because of this and because of the verbosity of XML, workarounds like the following are often employed instead:
 
@@ -139,7 +141,7 @@ If the syntax is similarly not extensible, this may lead to a more messy version
 
 In any case, the inextensibility of XML attributes may lead to unnecessary complexity, compatibility, and maintainability issues, compared to JSON properties.
 
-This is why a lot of XML used for data interchange uses attributes very sparingly or not at all. This unfortunately leads to verbosity which often has to be somehow dealt with. From the point of view of JSON this is an entirely unnecessary problem.
+This is why a lot of XML used for data interchange uses attributes very sparingly or not at all. This unfortunately leads to verbosity which often has to be somehow dealt with. From the point of view of JSON these are entirely unnecessary problems.
 
 ## Data types
 
