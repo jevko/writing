@@ -2,7 +2,7 @@
 
 Caution: madness ahead!
 
-In this article I will show how to combine Jevko with XML in a hack which will get ourselves out of a pickle caused by inextensibility of XML attributes. All this without changes to the structure of the XML. No meddling with mappings or schemas, no breaking of compatibility. Better yet: thanks to using Jevko, this hack is recursively extensible as opposed to space or comma separated values or similar inextensible syntax.
+In this article I will show how to combine Jevko with XML in a hack which will get us out of a pickle caused by inextensibility of XML attributes. All this without changes to the structure of the XML. No meddling with mappings or schemas, no breaking of compatibility. Better yet: thanks to using Jevko, this hack is recursively extensible as opposed to space or comma separated values or similar inextensible syntax.
 
 ## The problem with XML attributes
 
