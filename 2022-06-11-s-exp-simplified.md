@@ -209,6 +209,7 @@ Once again, let's visualize the construction of the list from the elements, forw
 ![Animation: constructing simplified S-expression for the list 1, 2, 3, 4, 5](img/2022-06-11-simple-sexp-12345-fwd.gif)
 
 ![Animation: constructing simplified S-expression for the list 1, 2, 3, 4, 5](img/2022-06-11-simple-sexp-12345-bwd.gif)
+
 ![Animation: constructing simplified S-expression for the list 1, 2, 3, 4, 5](img/2022-06-11-simple-sexp-12345-bwd-2.gif)
 
 As we can see, because of our change, the problem of the nested brackets has disappeared!
