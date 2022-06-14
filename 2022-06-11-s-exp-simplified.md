@@ -50,7 +50,11 @@ The paper starts by defining prerequisites for the definition of S-expressions, 
 
 > and an infinite set of distinguishable atomic symbols. For atomic symbols, we shall use strings of capital Latin letters and digits with single imbedded blanks. Examples of atomic symbols are
 
-> $A \\\\ A B A \\\\ APPLE\ PIE\ NUMBER\ 3$
+> $A$
+
+> $A B A$ 
+
+> $APPLE\ PIE\ NUMBER\ 3$
 
 Our basic building blocks are thus:
 
@@ -209,7 +213,7 @@ $)$
 
 and an infinite set of distinguishable atomic symbols. For atomic symbols, we shall use strings of capital Latin letters and digits with single imbedded blanks. Examples of atomic symbols are
 
-$ A \\\\ A B A \\\\ APPLE\ PIE\ NUMBER\ 3 $
+$ A $ $ A B A $ $ APPLE\ PIE\ NUMBER\ 3 $
 
 S-expressions are then defined as follows:
 
