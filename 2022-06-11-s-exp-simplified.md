@@ -63,11 +63,21 @@ Our basic building blocks are thus:
 
 In that context, more meaningful examples of symbols include:
 
-$MULTIPLY \\\\ ASSIGN \\\\ DISPLAY$
+$MULTIPLY$
+
+$ASSIGN$
+
+$DISPLAY$
 
 (these could be provided for us)
 
-$WEEKLY\ PAY \\\\ HOURS\ WORKED \\\\ PAY\ RATE \\\\ COMPUTE\ WEEKLY\ PAY$
+$WEEKLY\ PAY$
+
+$HOURS\ WORKED$
+
+$PAY\ RATE$
+
+$COMPUTE\ WEEKLY\ PAY$
 
 (these might be defined by us)
 
@@ -86,7 +96,11 @@ Then we are given 3 basic examples:
 
 > Examples of S-expressions are
 
-> $AB \\\\ (A \cdot B) \\\\ ((AB \cdot C) \cdot D)$
+> $AB$
+
+> $(A \cdot B)$
+
+> $((AB \cdot C) \cdot D)$
 
 And an alternative formulation for the 2nd point of the definition:
 
@@ -166,11 +180,19 @@ Our closing bracket is to the dot here what the lamp is to the letter I in this 
 
 Now let's recall the initial examples of S-expressions:
 
-> $AB \\\\ (A \cdot B) \\\\ ((AB \cdot C) \cdot D)$
+> $AB$
+
+> $(A \cdot B)$
+
+> $((AB \cdot C) \cdot D)$
 
 and see how they look after introducing our simplification:
 
-$ AB \\\\ (A)B \\\\ ((AB)C)D $
+$ AB $
+
+$ (A)B $
+
+$ ((AB)C)D $
 
 So where the dots were originally now we have closing brackets and where the closing brackets were we have nothing. Each pair is thus shorter by one character. So far so good.
 
@@ -213,7 +235,11 @@ $)$
 
 and an infinite set of distinguishable atomic symbols. For atomic symbols, we shall use strings of capital Latin letters and digits with single imbedded blanks. Examples of atomic symbols are
 
-$ A $ $ A B A $ $ APPLE\ PIE\ NUMBER\ 3 $
+$ A $
+
+$ A B A $ 
+
+$ APPLE\ PIE\ NUMBER\ 3 $
 
 S-expressions are then defined as follows:
 
@@ -222,7 +248,11 @@ S-expressions are then defined as follows:
 
 Examples of S-expressions are
 
-$ AB \\\\ (A)B \\\\ ((AB)C)D $
+$ AB $
+
+$ (A)B $
+
+$ ((AB)C)D $
 
 An S-expression is then simply an ordered pair, the terms of which may be atomic symbols or simpler S-expressions. We can can represent a list of arbitrary length in terms of S-expressions as follows. The list
 
