@@ -12,13 +12,7 @@ The language is called [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_la
 
 Even though the syntax is based around only a handful simple rules, it is flexible enough that it allows humans to succintly write arbitrarily complex programs that can be quickly executed by machines.
 
-<!-- Since the syntax is exceedingly simple and has been fundamentally stable for over 60 years, does that mean that it is perfectly optimal and there is no way to simplify it further without sacrificing the balance? -->
-
 Given their exceeding simplicity, S-expressions strike a remarkable balance between flexibility, beauty, power, and friendliness both to humans and machines which remains unsurpassed by any other notation.
-
-<!-- The balance of simplicity with human<sup>[[1]](#note1)</sup> and machine friendliness that this notation of S-expression strikes remains unsurpassed by any other. -->
-
-<!-- simplicity, flexibility, beauty, power -->
 
 Since the syntax has been stable for over 60 years, does that mean that it is perfectly optimal and there is no way to simplify it further without sacrificing the balance?
 
@@ -30,17 +24,11 @@ And we should do that not only because it is possible, but also because it is fu
 
 *this is how it's done*
 
-<!-- what? simplify the definition of S-expressions
-why? because 64 years of Lisp, it's fun, it's beautiful, perfect, simple, it's possible
-how? by moving a bracket -->
-
 ## Introduction
 
 The reference material for this article is taken from the paper [Recursive Functions of Symbolic Expressions and Their Computation by Machine, Part I](http://www-formal.stanford.edu/jmc/recursive/node3.html) by John McCarthy of Massachusetts Institute of Technology, published April 1960.
 
 We will focus exclusively on the first part of section 3a. of the paper: *A Class of Symbolic Expressions* under **Recursive Functions of Symbolic Expressions**.
-
-<!-- concluding with a summary -->
 
 [First](#classical-s-expressions) we will analyze and explain what it says, [then](#simplified-s-expressions) we will simplify it, and finally we will [summarize and conclude](#summary-and-conclusion).
 
@@ -62,7 +50,7 @@ The paper starts by defining prerequisites for the definition of S-expressions, 
 
 > and an infinite set of distinguishable atomic symbols. For atomic symbols, we shall use strings of capital Latin letters and digits with single imbedded blanks. Examples of atomic symbols are
 
-> $A \\ A B A \\ APPLE\ PIE\ NUMBER\ 3$
+> $A \\\\ A B A \\\\ APPLE\ PIE\ NUMBER\ 3$
 
 Our basic building blocks are thus:
 
@@ -71,11 +59,11 @@ Our basic building blocks are thus:
 
 In that context, more meaningful examples of symbols include:
 
-$MULTIPLY \\ ASSIGN \\ DISPLAY$
+$MULTIPLY \\\\ ASSIGN \\\\ DISPLAY$
 
 (these could be provided for us)
 
-$WEEKLY\ PAY \\ HOURS\ WORKED \\ PAY\ RATE \\ COMPUTE\ WEEKLY\ PAY$
+$WEEKLY\ PAY \\\\ HOURS\ WORKED \\\\ PAY\ RATE \\\\ COMPUTE\ WEEKLY\ PAY$
 
 (these might be defined by us)
 
@@ -94,7 +82,7 @@ Then we are given 3 basic examples:
 
 > Examples of S-expressions are
 
-> $AB \\ (A \cdot B) \\ ((AB \cdot C) \cdot D)$
+> $AB \\\\ (A \cdot B) \\\\ ((AB \cdot C) \cdot D)$
 
 And an alternative formulation for the 2nd point of the definition:
 
@@ -120,23 +108,19 @@ How? The paper gives a template:
 
 > Here $NIL$ is an atomic symbol used to terminate lists
 
-<!-- : the last pair ends with NIL and starts with the last element, 
-
-start with NIL, see that it makes a pair with the last element of the list, then you see that this pair makes a pair with the next-to-last element, this pair in turn makes a pair with next-to-next-to-last element, and so on, until the final pair starts with the first element. -->
-
 For example, a list of numbers such as $1, 2, 3, 4, 5$ can be turned into the S-expression $(1 \cdot (2 \cdot (3 \cdot (4 \cdot (5 \cdot NIL)))))$. 
 
 Here are the pairs visualized one by one:
 
-![Animation: constructing S-expression for the list 1, 2, 3, 4, 5](img/anim9%20(copy%201).gif)
+![Animation: constructing S-expression for the list 1, 2, 3, 4, 5](img/2022-06-11-sexp-fwd.gif)
 
 Or seen backwards, starting from the innermost pair:
 
-![Animation: constructing S-expression for the list 1, 2, 3, 4, 5](img/anim4.gif)
+![Animation: constructing S-expression for the list 1, 2, 3, 4, 5](img/2022-06-11-sexp-bwd.gif)
 
 Imagined once more, as if we were building up the list step-by-step:
 
-![Animation: constructing S-expression for the list 1, 2, 3, 4, 5](img/anim6.gif)
+![Animation: constructing S-expression for the list 1, 2, 3, 4, 5](img/2022-06-11-sexp-bwd-2.gif)
 
 In this way we can represent lists of arbitrary length as pairs.
 
@@ -178,11 +162,11 @@ Our closing bracket is to the dot here what the lamp is to the letter I in this 
 
 Now let's recall the initial examples of S-expressions:
 
-> $AB \\ (A \cdot B) \\ ((AB \cdot C) \cdot D)$
+> $AB \\\\ (A \cdot B) \\\\ ((AB \cdot C) \cdot D)$
 
 and see how they look after introducing our simplification:
 
-$ AB \\ (A)B \\ ((AB)C)D $
+$ AB \\\\ (A)B \\\\ ((AB)C)D $
 
 So where the dots were originally now we have closing brackets and where the closing brackets were we have nothing. Each pair is thus shorter by one character. So far so good.
 
@@ -225,7 +209,7 @@ $)$
 
 and an infinite set of distinguishable atomic symbols. For atomic symbols, we shall use strings of capital Latin letters and digits with single imbedded blanks. Examples of atomic symbols are
 
-$ A \\ A B A \\ APPLE\ PIE\ NUMBER\ 3 $
+$ A \\\\ A B A \\\\ APPLE\ PIE\ NUMBER\ 3 $
 
 S-expressions are then defined as follows:
 
@@ -234,7 +218,7 @@ S-expressions are then defined as follows:
 
 Examples of S-expressions are
 
-$ AB \\ (A)B \\ ((AB)C)D $
+$ AB \\\\ (A)B \\\\ ((AB)C)D $
 
 An S-expression is then simply an ordered pair, the terms of which may be atomic symbols or simpler S-expressions. We can can represent a list of arbitrary length in terms of S-expressions as follows. The list
 
