@@ -10,7 +10,7 @@ It gave rise to an entire family of languages which lives on to this day. A defi
 
 The language is called [Lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)) (short for **Lis**t **p**rocessor) and the notation is called S-expressions (S stands for **S**ymbolic).
 
-Even though the syntax is based around only a handful simple rules, it is flexible enough that it allows humans to succintly write arbitrarily complex programs that can be quickly executed by machines.
+Even though the syntax is based around only a handful simple rules, it is flexible enough that it allows humans to succinctly write arbitrarily complex programs that can be quickly executed by machines.
 
 Given their exceeding simplicity, S-expressions strike a remarkable balance between flexibility, beauty, power, and friendliness both to humans and machines which remains unsurpassed by any other notation.
 
@@ -36,7 +36,7 @@ For completeness, [Appendix A](#appendix-a-the-original-definition-of-s-expressi
 
 ## Classical S-expressions
 
-We will quote the contents of the paper directly in order, adding comments inbetween.
+We will quote the contents of the paper directly in order, adding comments in between.
 
 The paper starts by defining prerequisites for the definition of S-expressions, namely:
 
