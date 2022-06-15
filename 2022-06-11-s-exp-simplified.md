@@ -90,7 +90,7 @@ Which brings us to the main point: **the definition of S-expressions themselves*
 > S-expressions are then defined as follows:
 
 > 1. Atomic symbols are S-expressions.
-> 2. If <!-- -->  $e_{1}$  <!-- --> and   <!-- --> $e_{2}$ <!-- -->  are S-expressions, so is <!-- -->  $(e_1 \cdot e_2)$  <!-- --> . 
+> 2. If []() $e_{1}$ []() and []() $e_{2}$ []() are S-expressions, so is []() $(e_1 \cdot e_2)$ [](). 
 
 Then we are given 3 basic examples:
 
@@ -126,7 +126,7 @@ How? The paper gives a template:
 
 > Here $NIL$ is an atomic symbol used to terminate lists
 
-For example, a list of numbers such as $1, 2, 3, 4, 5$ can be turned into the S-expression $(1 \cdot (2 \cdot (3 \cdot (4 \cdot (5 \cdot NIL)))))$. 
+For example, a list of numbers such as []()$1, 2, 3, 4, 5$ []() can be turned into the S-expression []() $(1 \cdot (2 \cdot (3 \cdot (4 \cdot (5 \cdot NIL)))))$ [](). 
 
 Here are the pairs visualized one by one:
 
@@ -245,7 +245,7 @@ $ APPLE\ PIE\ NUMBER\ 3 $
 S-expressions are then defined as follows:
 
 1. Atomic symbols are S-expressions.
-2. If  $ e_1 $  and  $ e_2 $  are S-expressions, so is  $ (e_1)e_2 $ .
+2. If []() $e_1$ []() and []() $e_2$ []() are S-expressions, so is []() $(e_1)e_2$ []().
 
 Examples of S-expressions are
 
