@@ -90,7 +90,7 @@ Which brings us to the main point: **the definition of S-expressions themselves*
 > S-expressions are then defined as follows:
 
 > 1. Atomic symbols are S-expressions.
-> 2. If $ e_{1} $ and $ e_{2} $ are S-expressions, so is $ (e_1 \cdot e_2) $. 
+> 2. If $ {e_{1}} $ and $ e_{2} $ are S-expressions, so is $ (e_1 \cdot e_2) $. 
 
 Then we are given 3 basic examples:
 
