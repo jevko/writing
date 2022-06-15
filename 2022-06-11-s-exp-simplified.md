@@ -245,7 +245,7 @@ $ APPLE\ PIE\ NUMBER\ 3 $
 S-expressions are then defined as follows:
 
 1. Atomic symbols are S-expressions.
-2. If $e_1$ and $e_2$ are S-expressions, so is $(e_1)e_2$.
+2. If  $e_1$  and  $e_2$  are S-expressions, so is  $(e_1)e_2$ .
 
 Examples of S-expressions are
 
