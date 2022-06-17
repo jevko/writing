@@ -52,7 +52,7 @@ The paper starts by defining prerequisites for the definition of S-expressions, 
 
 > $A$
 
-> $A B A$ 
+> $A\ B\ A$ 
 
 > $APPLE\ PIE\ NUMBER\ 3$
 
@@ -238,7 +238,7 @@ and an infinite set of distinguishable atomic symbols. For atomic symbols, we sh
 
 $ A $
 
-$ A B A $ 
+$ A\ B\ A $ 
 
 $ APPLE\ PIE\ NUMBER\ 3 $
 
