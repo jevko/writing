@@ -1,4 +1,4 @@
-# Jevko compared to YAML
+# The Jevko document from heaven (Jevko compared to YAML)
 
 A recent article [The yaml document from hell](https://ruudvanasseldonk.com/2023/01/11/the-yaml-document-from-hell) by [Ruud van Asseldonk](https://ruudvanasseldonk.com/) was linked by [Tim Bray](https://hachyderm.io/@timbray/109684432097093279) on Mastodon with the following comment:
 
