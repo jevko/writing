@@ -113,3 +113,5 @@ If we want to transform this tree into a sensible data structure we would need t
 This is the point of Jevko: it serves the role of the pure universal text-based syntax, completely separated from semantics. This gives us more power and flexibility and gets rid of the issues that come from premature entanglemet of syntax and semantics, as we see in YAML. That is, if we need that.
 
 If we're not interested in that, as most users are not, we can still benefit from Jevko, by using a *Jevko format* -- which is a ready-made combination of syntax (Jevko) and semantics that does the right thing for us.
+
+// TODO: describe .jevkodata
