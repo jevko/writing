@@ -100,8 +100,16 @@ On the other hand being required to enclose all nested values in brackets allows
 
 YAML documents are similarly appendable (as opposed to e.g. JSON), but nested values don't have to be enclosed in brackets -- which creates a problem described by Tim Bray as "the document-delimiter problem" (not mentioned in the linked article). You can never be sure whether the trailing values in the document are truncated.
 
-Because Jevko is based around brackets rather than whitespace, we can compact the above document by removing all comments and insignificant whitespace into:
+Because Jevko is based around brackets rather than whitespace, we can compact the above document by removing all comments and insignificant whitespace:
 
 ```
 server_config[port_mapping[[22:22][80:80][443:443]]serve[[/robots.txt][/favicon.ico][*.html][*.png][!.git]]geoblock_regions[[dk][fi][is][no][se]]flush_cache[on[[push][memory_pressure]]priority[background]]allow_postgres_versions[[9.5.25][9.6.24][10.23][12.13]]]
 ```
+
+Now, if we used a plain Jevko parser on any of the above documents we would not get a nice programming language structure with the appropriate (or not, as we see in YAML) data types figured out by the parser. Instead we would get a raw syntax tree which has the correct structure (defined by the brackets), but nothing in it is interpreted in any way -- the leaves of the tree are just text.
+
+If we want to transform this tree into a sensible data structure we would need to process it further, according to chosen semantics. Only after combining pure syntax with semantics we would get to the same point as we get after parsing YAML.
+
+This is the point of Jevko: it serves the role of the pure universal text-based syntax, completely separated from semantics. This gives us more power and flexibility and gets rid of the issues that come from premature entanglemet of syntax and semantics, as we see in YAML. That is, if we need that.
+
+If we're not interested in that, as most users are not, we can still benefit from Jevko, by using a *Jevko format* -- which is a ready-made combination of syntax (Jevko) and semantics that does the right thing for us.
