@@ -114,4 +114,58 @@ This is the point of Jevko: it serves the role of the pure universal text-based 
 
 If we're not interested in that, as most users are not, we can still benefit from Jevko, by using a *Jevko format* -- which is a ready-made combination of syntax (Jevko) and semantics that does the right thing for us.
 
+Let's see how we might interpret the Jevko document, so that we arrive at values that were intended by the author.
+
+## Interpreting the Jevko document
+
+We start with the full uncompacted version of the document. We parse that, getting a syntax tree.
+
+Now we process the tree.
+
+In the first step, we shall get rid of the insignificant fragments of the tree. In effect we will go from the full to the compacted document.
+
+To do that we walk the tree and we trim/strip all leaves, removing leading and trailing whitespace from them.
+
+We also remove all lines of text from the leaves except the last: the preceding lines are treated as comments. Now this may not be a generic algorithm, but it will work for this particular example.
+
+Now our transformed syntax tree is identical to the parse tree of the compact version of the document, repeated here again:
+
+```
+server_config[port_mapping[[22:22][80:80][443:443]]serve[[/robots.txt][/favicon.ico][*.html][*.png][!.git]]geoblock_regions[[dk][fi][is][no][se]]flush_cache[on[[push][memory_pressure]]priority[background]]allow_postgres_versions[[9.5.25][9.6.24][10.23][12.13]]]
+```
+
+This has all the meat: all of this is relevant data with the correct structure with no filler for humans.
+
+Now it just so happens in this particular example (as it does in great many cases in practice) that we want to interpret all the primitive values in this tree as strings. If our Jevko parser represents Jevko text nodes as simple strings (as I generally recommend implementations to do), at this point we won't need to process these leaves further. The primitive values are all those without any nested brackets, such as:
+
+```
+[dk][fi][is][no][se]
+```
+
+or
+
+```
+[9.5.25][9.6.24][10.23][12.13]
+```
+
+Now we only need to transform the complex values in the tree, the ones that do contain nested brackets (nested primitive values), such as:
+
+```
+[[22:22][80:80][443:443]]
+```
+
+or:
+
+```
+[on[[push][memory_pressure]]priority[background]]
+```
+
+We can always make do with only two kinds of complex values (as e.g. JSON does): lists/arrays and dictionaries/objects.
+
+The way we distinguish between those is simple:
+
+* in lists, all subtrees have empty prefixes, i.e. nested values have no text before opening brackets,
+* whereas in dictionaries, all subtrees have non-empty prefixes; we shall interpret those prefixes as dictionary keys;
+
+
 // TODO: describe .jevkodata
