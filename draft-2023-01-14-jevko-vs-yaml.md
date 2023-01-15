@@ -167,5 +167,32 @@ The way we distinguish between those is simple:
 * in lists, all subtrees have empty prefixes, i.e. nested values have no text before opening brackets,
 * whereas in dictionaries, all subtrees have non-empty prefixes; we shall interpret those prefixes as dictionary keys;
 
+An arrangement where some subtrees have empty, and other non-empty prefixes we shall consider invalid in our interpretation.
+
+With these rules in hand, we can now transform our tree into the result we expect.
+
+To do that, we walk the tree from the top and we look to see if it has any subtrees.
+
+If not, then it's a primitive value, so we interpret it as a string, returning the text in the leaf of the tree.
+
+If yes, then we check the prefix of the first subtree.
+
+If the prefix is empty, then we interpret the tree as a list. The elements of the list will be the subtrees recursively transformed with the same algorithm.
+
+If the prefix is non-empty, then we interpret the tree as a dictionary. The keys of the dictionary will be the prefixes of the subtrees, the values will be the subtrees recursively transformed with the same algorithm.
+
+When interpreting a list, we will check that all remaining subtrees have empty prefixes. If we find a non-empty one, we error. 
+
+When interpreting a dictionary we check that all remaining subtrees have non-empty prefixes. If we find an empty one, we error. We will consider duplicated keys invalid.
+
+Note that this algorithm disallows dictionaries which contain an empty key or keys with leading or trailing space. But for this example (as for most in practice) this is perfectly sufficient (even desirable).
+
+This (and previously mentioned) limitation can be removed by applying a more complex interpretation algorithm, but for this case what we described here is sufficient.
+
+We have transformed the tree into the value we wanted.
+
+All this thru a simple and predictable (even though my imperfect prosaic description may seem complicated) dumb algorithm, with full control over the process and no hellish YAML magic getting in our way.
+
+
 
 // TODO: describe .jevkodata
