@@ -114,7 +114,7 @@ This is the point of Jevko: it serves the role of the pure universal text-based 
 
 If we're not interested in that, as most users are not, we can still benefit from Jevko, by using a *Jevko format* -- which is a ready-made combination of syntax (Jevko) and semantics that does the right thing for us.
 
-Let's see how we might interpret the Jevko document, so that we arrive at values that were intended by the author.
+But before we get to that, let's see how we might interpret the Jevko document ourselves, so that we arrive at values that were intended by the author.
 
 ## Interpreting the Jevko document
 
@@ -187,11 +187,13 @@ When interpreting a dictionary we check that all remaining subtrees have non-emp
 
 Note that this algorithm disallows dictionaries which contain an empty key or keys with leading or trailing space. But for this example (as for most in practice) this is perfectly sufficient (even desirable).
 
-This (and previously mentioned) limitation can be removed by applying a more complex interpretation algorithm, but for this case what we described here is sufficient.
+This limitation as well as all previously mentioned limitations can be removed by applying a more complex interpretation algorithm, but for this case what we described here is sufficient.
 
 We have transformed the tree into the value we wanted.
 
 All this thru a simple and predictable (even though my imperfect prosaic description may seem complicated) dumb algorithm, with full control over the process and no hellish YAML magic getting in our way.
+
+<!-- Incidentally, the semantics we described here closely resemble Easy Jevko -->
 
 
 
