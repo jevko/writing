@@ -19,7 +19,3 @@ Programmers are wizards. And some of them know it.
 > Yet the program construct, unlike the poet's words, is real in the sense that in moves and works, producing visible outputs seperate from the construct itself. It prints results, draws pictures, produces sounds, moves arms. The magic of myth and legend has come true in our time. One types the correct incantation on the keyboard, and a display screen comes to life, showing things that never were nor could be.
 
 ― [Frederic P. Brooks](https://pages.cs.wisc.edu/~param/quotes/man-month.html)
-
-Now you do too.
-
-Go cast some spells.
