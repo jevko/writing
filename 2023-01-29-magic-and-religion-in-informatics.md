@@ -1,6 +1,6 @@
 # Magic and religion in informatics
 
-Yesterday I wrote about [programming as magic](2023-01-28-programming-as-magic.md), quotinng Hal Abelson:
+Yesterday I wrote about [programming as magic](2023-01-28-programming-as-magic.md), quoting Hal Abelson:
 
 > There's a good part of Computer Science that's like magic. Unfortunately there's a bad part of Computer Science that's like religion.
 
