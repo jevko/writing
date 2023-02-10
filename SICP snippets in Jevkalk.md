@@ -54,3 +54,12 @@ bind [[circumference] * [[2][pi][radius]]]
 
 [circumference]
 ```
+
+# page 9
+
+```
+* [
+  + [[2] * [[4][6]]]
+  + [[3][5][7]]
+]
+```
