@@ -36,3 +36,21 @@
 
 bind [[size][2]]
 ```
+
+# page 8
+
+```
+[size]
+
+* [[5][size]]
+
+bind [[pi][3.14159]]
+
+bind [[radius][10]]
+
+* [[pi] * [[radius][radius]]]
+
+bind [[circumference] * [[2][pi][radius]]]
+
+[circumference]
+```
