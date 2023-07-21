@@ -122,7 +122,7 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 [2022-01-04-large-numbers-in-json.md](2022-01-04-large-numbers-in-json.md)
 
-<!-- [2021-01-26-why-validate-json.md](2021-01-26-why-validate-json.md) --> -->
+<!-- [2021-01-26-why-validate-json.md](2021-01-26-why-validate-json.md) -->
 
 These are marked as drafts, although the distinction is mostly dependent on my mood when naming the file:
 
