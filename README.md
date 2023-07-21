@@ -2,7 +2,9 @@
 
 A public place for quick unpolished technical writing.
 
-More polished pieces shall be republished [here](https://xtao.org/blog.html).
+See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.org/blog](https://xtao.org/blog.html) for more polished writing by me. Some of the writing here may eventually get republished there.
+
+**Note**: you can view these writings [directly on GitHub](https://github.com/jevko/writing) or [thru a GitHub page](https://jevko.github.io/writing/) -- it's generally better to do so directly, because GitHub pages don't do syntax highlighting and don't rended math formulas, making them unreadable.
 
 ## List of writings
 
