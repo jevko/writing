@@ -212,7 +212,7 @@ syntax.</p>
 <p>I also show how various syntax modifications and variants can be
 mixed-and-matched and combined to reintroduce human-readability while
 retaining the ease of processing.</p>
-<p>I introduce a loose labelling scheme for lambda calculus syntax
+<p>I introduce a loose labeling scheme for lambda calculus syntax
 variants, with LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> denoting the
 most terse text-based variant of the syntax.</p>
 <p>Compare a few well-known combinators:</p>
@@ -338,6 +338,10 @@ lambda and alpha. E.g.:</li>
 <li><em>α α α α α</em> becomes <em>α<sup>5</sup></em>,</li>
 <li>etc.</li>
 </ul>
+<p>The resulting syntax is effectively <a
+href="https://en.wikipedia.org/wiki/Polish_notation">Polish notation</a>
+for lambda calculus, so there are no hidden precedence and associativity
+rules.</p>
 <!-- todo: make these labels uniform thru the document -- make sure they are not messed up -->
 <p>The LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> label signifies that
 the syntax:</p>
@@ -351,7 +355,7 @@ with run-length encoding (<sup>2</sup>).</li>
 </ul>
 <p>For an example of how this syntax can be combined with the
 conventional one, the Y combinator, i.e.:</p>
-<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>f</mi><mi>.</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>λ</mi><mi>x</mi><mi>.</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>λ</mi><mi>x</mi><mi>.</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">λf.(λx.f (x x)) (λx.f (x x))</annotation></semantics></math></p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><mi>λ</mi><mi>f</mi><mi>.</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>λ</mi><mi>x</mi><mi>.</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>λ</mi><mi>x</mi><mi>.</mi><mi>f</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">Y = λf.(λx.f (x x)) (λx.f (x x))</annotation></semantics></math></p>
 <p>can be rendered as:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mi>Y</mi><mo>=</mo><msub><mi>λ</mi><mi>f</mi></msub><mi>α</mi></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mi>λ</mi><mi>α</mi><mspace width="0.167em"></mspace><msub><mi>τ</mi><mi>f</mi></msub><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"></mtd><mtd columnalign="left" style="text-align: left"><mi>λ</mi><mi>α</mi><mspace width="0.167em"></mspace><msub><mi>τ</mi><mi>f</mi></msub><mspace width="0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>α</mi><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
@@ -376,8 +380,9 @@ clarity.</p>
 <li>for use in software such as parsers, generators, translators,</li>
 <li>for handwritten notes.</li>
 </ul>
-<p>And for a bit of humor, here is how to encode UWU:</p>
+<p>And for a bit of humor, here is how to encode <em>UWU</em>:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>W</mi><mi>U</mi><mo>=</mo><msup><mi>α</mi><mn>2</mn></msup><mi>λ</mi><mi>α</mi><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><msup><mi>λ</mi><mn>2</mn></msup><msub><mi>τ</mi><mn>1</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><mi>λ</mi><mi>α</mi><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">UWU = α^2λατ_0τ_0λ^2τ_1τ_0τ_0λατ_0τ_0</annotation></semantics></math></p>
+<p><em>UWU</em></p>
 <h1 id="references">References</h1>
 <ol type="1">
 <li><p><a name="debruijn"></a> <a

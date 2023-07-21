@@ -10,6 +10,7 @@ date: 2023-07-21
   html {
     /* todo: use for publishing a dark-mode draft: */
     filter: invert(1);
+    font-size: 18pt;
   }
 }
 @media print {
@@ -33,7 +34,7 @@ Going futher, I propose ways to also remove repetition from the syntax.
 
 I also show how various syntax modifications and variants can be mixed-and-matched and combined to reintroduce human-readability while retaining the ease of processing.
 
-I introduce a loose labelling scheme for lambda calculus syntax variants, with LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> denoting the most terse text-based variant of the syntax.
+I introduce a loose labeling scheme for lambda calculus syntax variants, with LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> denoting the most terse text-based variant of the syntax.
 
 Compare a few well-known combinators:
 
@@ -96,6 +97,8 @@ To get the LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> syntax:
   * *α α α α α* becomes *α<sup>5</sup>*, 
   * etc.
 
+The resulting syntax is effectively [Polish notation](https://en.wikipedia.org/wiki/Polish_notation) for lambda calculus, so there are no hidden precedence and associativity rules.
+
 <!-- todo: make these labels uniform thru the document -- make sure they are not messed up -->
 
 The LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> label signifies that the syntax: 
@@ -106,7 +109,7 @@ The LCλ<sup>2</sup>τ<sub>0</sub>α<sup>2</sup> label signifies that the syntax
 
 For an example of how this syntax can be combined with the conventional one, the Y combinator, i.e.:
 
-$$λf.(λx.f (x x)) (λx.f (x x))$$
+$$Y = λf.(λx.f (x x)) (λx.f (x x))$$
 
 can be rendered as:
 
@@ -128,9 +131,11 @@ The described syntaxes may be useful:
 * for use in software such as parsers, generators, translators, 
 * for handwritten notes.
 
-And for a bit of humor, here is how to encode UWU:
+And for a bit of humor, here is how to encode *UWU*:
 
 $$UWU = α^2λατ_0τ_0λ^2τ_1τ_0τ_0λατ_0τ_0$$
+
+*UWU*
 
 # References
 
