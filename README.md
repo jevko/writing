@@ -8,6 +8,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## List of writings
 
+[2023-07-21 [DRAFT] [SUMMARY-ONLY] Terse canonical name-, paren-, and space-free syntaxes for lambda calculus](2023-07-19-lambda-notation-mvp.md)
+
 <!-- [2023-07-20-lambda.html](2023-07-20-lambda.html) -->
 <!--  -->
 <!-- [2023-07-19-lambda-notation.md](2023-07-19-lambda-notation.md) -->
