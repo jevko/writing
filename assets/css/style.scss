@@ -1,0 +1,12 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+@media screen {
+  html {
+    /* todo: use for publishing a dark-mode draft: */
+    filter: invert(1);
+    font-size: 18pt;
+  }
+}
