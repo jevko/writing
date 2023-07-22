@@ -40,51 +40,51 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 [2022-01-04 Large numbers in JSON](2022-01-04-large-numbers-in-json.md)
 
-<!-- todo: make the lists below nicer by replacing filenames with titles -->
-
 ## About Jevko
 
-[2022-02-06-jevko-analogies.md](2022-02-06-jevko-analogies.md)
+[2022-02-06 Some semantic analogies to syntactic constructs in Jevko](2022-02-06-jevko-analogies.md)
 
-[2022-01-22-xml-jevko-attrs.md](2022-01-22-xml-jevko-attrs.md)
+[2022-01-22 Hacking XML attributes with Jevko](2022-01-22-xml-jevko-attrs.md)
 
-[2022-01-20-jevko-grammar.md](2022-01-20-jevko-grammar.md)
+[2022-01-20 The low and high level Jevko grammars](2022-01-20-jevko-grammar.md)
 
-[2022-01-17-compact-xml.md](2022-01-17-compact-xml.md)
+[2022-01-17 Jevko as ultra-compact XML, take 2](2022-01-17-compact-xml.md)
 
-[2022-01-13-xml.md](2022-01-13-xml.md)
+[2022-01-13 Jevko as ultra-compact XML](2022-01-13-xml.md)
 
-[2022-01-13-vision.md](2022-01-13-vision.md)
+[2022-01-13 A vision of total intercommunication of all software systems](2022-01-13-vision.md)
 
-[2022-01-12-logo.md](2022-01-12-logo.md)
+[2022-01-12 New year, new logo for Jevko?](2022-01-12-logo.md)
 
-[2022-01-10-jevko-visual-parse-trees.md](2022-01-10-jevko-visual-parse-trees.md)
+[2022-01-10 A mapping between Jevko and visual trees](2022-01-10-jevko-visual-parse-trees.md)
 
-[draft-2023-01-14-jevko-vs-yaml.md](draft-2023-01-14-jevko-vs-yaml.md)
+[2023-01-14 Draft: The Jevko document from heaven (Jevko compared to YAML)](draft-2023-01-14-jevko-vs-yaml.md)
 
-[draft-2022-01-24-horse.md](draft-2022-01-24-horse.md)
+[2022-01-24 Horse and carriage](draft-2022-01-24-horse.md)
 
 ## Selected nontechnical
 
-[2023-01-30-cbcl.md](2023-01-30-cbcl.md)
+[2023-01-30 Common Business Communication Language](2023-01-30-cbcl.md)
 
-[2023-01-29-magic-and-religion-in-informatics.md](2023-01-29-magic-and-religion-in-informatics.md)
+[2023-01-29 Magic and religion in informatics](2023-01-29-magic-and-religion-in-informatics.md)
 
-[2023-01-28-programming-as-magic.md](2023-01-28-programming-as-magic.md)
+[2023-01-28 Programming as magic](2023-01-28-programming-as-magic.md)
 
-[2023-01-27-fungi.md](2023-01-27-fungi.md)
+[2023-01-27 Fungi get you in the end](2023-01-27-fungi.md)
 
-[2023-01-19-paradox.md](2023-01-19-paradox.md)
+[2023-01-19 Paradox might be fundamental](2023-01-19-paradox.md)
 
-[2023-01-19-logic.md](2023-01-19-logic.md)
+[2023-01-19 Rules of logic are not fundamental](2023-01-19-logic.md)
 
-[2023-01-17-simplicity-and-truth.md](2023-01-17-simplicity-and-truth.md)
+[2023-01-17 Truth and simplicity go together](2023-01-17-simplicity-and-truth.md)
 
-[draft-2023-01-12-free-will.md](draft-2023-01-12-free-will.md)
+[2023-01-12 The Free Will Wager](draft-2023-01-12-free-will.md)
 
-[draft-2023-01-05-simple-to-complex.md](draft-2023-01-05-simple-to-complex.md)
+[2023-01-05 Simple modular elements connected together into increasingly complex forms](draft-2023-01-05-simple-to-complex.md)
 
-[draft-2023-01-04-little-green-squares.md](draft-2023-01-04-little-green-squares.md)
+[2023-01-04 Little green squares](draft-2023-01-04-little-green-squares.md)
+
+<!-- todo: make the list below nicer by replacing filenames with titles -->
 
 ## Unsorted
 
