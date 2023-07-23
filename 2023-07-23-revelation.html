@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Darius J Chuck" />
+  <meta name="dcterms.date" content="2023-07-23" />
+  <title>Exploring Simplified Lambda Calculus Notations: Revelation</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<a href="https://jevko.github.io/writing">jevko.github.io/writing</a>
+<header id="title-block-header">
+<h1 class="title">Exploring Simplified Lambda Calculus Notations:
+Revelation</h1>
+<p class="author">Darius J Chuck</p>
+<p class="date">2023-07-23</p>
+</header>
+<style>
+@media screen {
+  html {
+    /* todo: use for publishing a dark-mode draft: */
+    filter: invert(1);
+    font-size: 18pt;
+  }
+}
+</style>
+<p><em>I suppose this is part II in a series.</em></p>
+<p><a href="https://jevko.github.io/writing/2023-07-20-lambda.html">HTML
+version of part I is here</a>.</p>
+<hr />
+<p><strong>Lambda Calculus can be reduced down to 4 primitive
+operations.</strong></p>
+<p>The syntax for lambda calculus stripped down to these 4 operations is
+defined as follows:</p>
+<pre><code>term ::= abstraction
+       | application
+       | revelation
+       | reference</code></pre>
+<p>The first two should be more or less familiar.</p>
+<p>Abstraction is defined like so:</p>
+<p><code>abstraction ::=</code>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛌</mi><annotation encoding="application/x-tex">\boldsymbol{\lambda}</annotation></semantics></math>
+<code>term</code></p>
+<p>It doesn’t mention variable names. It’s simply a lambda
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
+prefixed to a term. This is the same as in N.G. de Bruijn’s namefree
+syntax.</p>
+<p>Now application is defined as:</p>
+<p><code>application ::=</code>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛂</mi><annotation encoding="application/x-tex">\boldsymbol{\alpha}</annotation></semantics></math>
+<code>term term</code></p>
+<p>We introduce an application operator, alpha
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
+so that we don’t have to worry about parentheses, associativity, and
+precedence. We turn the syntax into Polish notation – operations are
+done left-to-right, in the order explicitly defined by the position of
+the prefix operators.</p>
+<p>With that out of the way, let’s get to the interesting operations:
+revelation and reference.</p>
+<p>As can be guessed, these replace variable references.</p>
+<p>We will leave revelation for the end. First let’s look at
+reference:</p>
+<p><code>reference ::=</code>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛕</mi><annotation encoding="application/x-tex">\boldsymbol{\tau}</annotation></semantics></math></p>
+<p>It’s denoted simply by the letter tau
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>.
+What it does is it refers to the topmost variable in current scope.
+Normally the topmost variable is the one introduced by the lambda
+closest to the current position, i.e.:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \tau
+</annotation></semantics></math></p>
+<p>means the same thing as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda x.x</annotation></semantics></math>.
+in the conventional notation. Similarly:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \lambda \tau
+</annotation></semantics></math></p>
+<p>means the same thing as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>λ</mi><mi>y</mi><mi>.</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\lambda x.\lambda y.y</annotation></semantics></math>
+in the conventional notation.</p>
+<p>All well and good, but how do we refer to a variable that is not
+topmost in current scope?</p>
+<p><strong>Here is where the revelation comes in</strong>:</p>
+<p><code>revelation ::=</code>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛔</mi><annotation encoding="application/x-tex">\boldsymbol{\sigma}</annotation></semantics></math>
+<code>term</code></p>
+<p>Besides being a cool pun, the name is quite descriptive. The sigma
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+operator <em>reveals</em> to the term that follows it the next variable
+in current scope – it creates a new scope with the topmost variable
+discarded. The topmost variable in the new scope is the one introduced
+by the lambda <em>one step back</em> from the current position. So:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \lambda \sigma \tau
+</annotation></semantics></math></p>
+<p>means the same thing as
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>λ</mi><mi>y</mi><mi>.</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\lambda x.\lambda y.x</annotation></semantics></math>
+in the conventional notation.</p>
+<p>With these 4 operations, not only can we encode any and all lambda
+terms that we can encode in the conventional notation without using
+numerical de Bruijn indices or needing an infinite supply of names for
+variables.</p>
+<p>Being more “low-level”, this notation can actually represent most
+lambda terms in more than one way.</p>
+<p>For example, a conventionally-encoded lambda term like:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>λ</mi><mi>y</mi><mi>.</mi><mi>λ</mi><mi>z</mi><mi>.</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">
+\lambda x.\lambda y.\lambda z.x
+</annotation></semantics></math></p>
+<p>Can be represented as:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \lambda \lambda \sigma \sigma \tau
+</annotation></semantics></math></p>
+<p>or equivalently as :</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>λ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \lambda \sigma \lambda \sigma \tau
+</annotation></semantics></math></p>
+<p>Having
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
+be a first-class operation, we can now choose at which points we reveal
+the interesting (or equivalently: discard the uninteresting)
+variables.</p>
+<p>This starts to matter when we add applications to the mix.</p>
+<p>Consider a term like:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>λ</mi><mi>y</mi><mi>.</mi><mi>λ</mi><mi>z</mi><mi>.</mi><mi>x</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>x</mi></mrow><annotation encoding="application/x-tex">
+\lambda x.\lambda y.\lambda z.x\,x\,x\,x
+</annotation></semantics></math></p>
+<p>Naively we could represent it as:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>λ</mi><mi>α</mi><mi>α</mi><mi>α</mi><mi>σ</mi><mi>σ</mi><mi>τ</mi><mi>σ</mi><mi>σ</mi><mi>τ</mi><mi>σ</mi><mi>σ</mi><mi>τ</mi><mi>σ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \lambda \lambda \alpha \alpha \alpha \sigma \sigma \tau \sigma \sigma \tau \sigma \sigma \tau \sigma \sigma \tau
+</annotation></semantics></math></p>
+<p>But actually, we don’t have to repeat the revelation operation twice
+for every application. We can “factor it out”, like so:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>σ</mi><mi>α</mi><mi>α</mi><mi>α</mi><mi>τ</mi><mi>τ</mi><mi>τ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
+\lambda \lambda \lambda \sigma \sigma \alpha \alpha \alpha \tau \tau \tau \tau
+</annotation></semantics></math></p>
+<p>Now the scopes which the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>
+operations “see” already have the unnecessary variables discarded.</p>
+<p>This equivalent encoding of the lambda term is not only shorter but
+more efficient in terms of the number of operations performed.</p>
+<p><strong>With that, we are ready to introduce the notions of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-equivalence
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-reduction
+or
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-optimization</strong>.</p>
+<p>Those interested in how that may look like, I direct to the <a
+href="https://xtao.org/blog/last-intro.html">Introduction to the LAST
+programming language</a>, which describes the first incarnation of this
+idea I implemented last year. The LAST language works exactly in the way
+described here, except it uses the letters L, A, S, and T instead of
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>,
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>.
+The implementation also features
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-optimization,
+there called S-optimization, which is an algorithm I developed that
+transforms lambda terms into fully optimized
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-equivalents.</p>
+<p><strong>Now not being a mathematician, I haven’t proven that these
+are indeed fully optimized. I’d appreciate if anybody could help with
+that.</strong></p>
+<p>If nothing else, I think it’s pretty cool that it’s possible to
+simplify lambda calculus like this and dig into its low-level details.
+It helps with gaining a deeper understanding of (effectively)
+foundations of mathematics. This in turn is potentially useful in areas
+that draw from that, such as computer science, theory of programming
+languages, category theory, as well as philosophy or linguistics.</p>
+<p>Recently I’ve been thinking about this a lot again and finding more
+interesting insights, which I may get around to writting down at some
+point. Meanwhile I hope this writing may help some puzzle pieces snap
+together in somebody else’s head.</p>
+</body>
+</html>

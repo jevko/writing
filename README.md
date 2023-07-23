@@ -12,7 +12,9 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## Selected technical
 
-[2023-07-21 Exploring Simplified Lambda Calculus Notations: Summary](2023-07-19-lambda-notation-mvp.md)
+2023-07-23 "Exploring Simplified Lambda Calculus Notations: Revelation" [(HTML)](2023-07-23-revelation.html), [(Markdown)](2023-07-23-revelation.md).
+
+2023-07-21 "Exploring Simplified Lambda Calculus Notations: Summary" [(HTML)](2023-07-20-lambda.html), [(Markdown)](2023-07-19-lambda-notation-mvp.md).
 
 [2023-02-09 The Ecosystem Paradox](2023-02-09-ecosystem-paradox.md)
 
