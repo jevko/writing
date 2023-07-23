@@ -102,71 +102,33 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 [2023-05-16-ostra.md](2023-05-16-ostra.md)
 
-<!-- [2023-02-02.md](2023-02-02.md) -->
-
 [2023-02-01-nano-standard.md](2023-02-01-nano-standard.md)
 
 [2023-01-31-universality.md](2023-01-31-universality.md)
 
 [2023-01-31-standard.md](2023-01-31-standard.md)
-<!--  -->
-<!-- [2023-01-29-gamedev.md](2023-01-29-gamedev.md) -->
 
 [2023-01-26-rational.md](2023-01-26-rational.md)
 
 [2023-01-26-interactions.md](2023-01-26-interactions.md)
 
 [2023-01-26-cosmic-explosion.md](2023-01-26-cosmic-explosion.md)
-<!--  -->
-<!-- [2023-01-17-marketing.md](2023-01-17-marketing.md) -->
 
 [2023-01-17-jsx.md](2023-01-17-jsx.md)
 
 [2023-01-17-adoption.md](2023-01-17-adoption.md)
 
 [2023-01-08-habits.md](2023-01-08-habits.md)
-<!--  -->
-<!-- [2023-01-02-change.md](2023-01-02-change.md) -->
-<!--  -->
-<!-- [2022-06-14-spaces.md](2022-06-14-spaces.md) -->
-<!--  -->
-<!-- [2022-06-07-cons-cells.md](2022-06-07-cons-cells.md) -->
-<!--  -->
-<!-- [2022-02-02-cells-interlinked.md](2022-02-02-cells-interlinked.md) -->
-<!--  -->
-<!-- [2022-01-28-mfdi.md](2022-01-28-mfdi.md) -->
-<!--  -->
-<!-- [2022-01-27-mdif.md](2022-01-27-mdif.md) -->
-<!--  -->
-<!-- [2022-01-25-json-wrong.md](2022-01-25-json-wrong.md) -->
-<!--  -->
-<!-- [2022-01-25-json-types-harmful.md](2022-01-25-json-types-harmful.md) -->
-<!--  -->
-<!-- [2022-01-23-one-prefix-jevko.md](2022-01-23-one-prefix-jevko.md) -->
-<!--  -->
-<!-- [2022-01-23-kiss.md](2022-01-23-kiss.md) -->
 
 [2022-01-04-sexpr-subreddit.md](2022-01-04-sexpr-subreddit.md)
 
-<!-- [2021-01-26-why-validate-json.md](2021-01-26-why-validate-json.md) -->
-
 These are marked as drafts, although the distinction is mostly dependent on my mood when naming the file:
-
-<!-- [draft-philosophy-2023-01-07.md](draft-philosophy-2023-01-07.md)
-
-[draft.pdf](draft.pdf)
-
-[draft-2023-01-19-blast.md](draft-2023-01-19-blast.md) -->
 
 [draft-2023-01-16-explicit-semantics.md](draft-2023-01-16-explicit-semantics.md)
 
 [draft-2022-12-21-whitespace.md](draft-2022-12-21-whitespace.md)
 
 [draft-2022-01-28-mdif.md](draft-2022-01-28-mdif.md)
-
-<!-- [draft-2022-01-19-length-prefixed-jevko.md](draft-2022-01-19-length-prefixed-jevko.md) -->
-
-<!-- [draft-2022-01-18-binary-jevko.md](draft-2022-01-18-binary-jevko.md) -->
 
 [draft-2022-01-16-bare-xml.md](draft-2022-01-16-bare-xml.md)
 
