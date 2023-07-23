@@ -17,7 +17,9 @@ date: 2023-07-21
 }
 </style>
 
-*This is a summary of an article I've been writing for a few days. We'll see if the rest manifests. Meanwhile, this should be interesting for some lambda calculus enthusiasts. Enjoy!*
+<!-- *This is a summary of an article I've been writing for a few days. We'll see if the rest manifests. Meanwhile, this should be interesting for some lambda calculus enthusiasts. Enjoy!*
+
+*** -->
 
 <div class="pagebreak"> </div>
 

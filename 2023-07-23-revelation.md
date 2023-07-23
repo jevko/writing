@@ -14,12 +14,6 @@ date: 2023-07-23
 }
 </style>
 
-*I suppose this is part II in a series.*
-
-[HTML version of part I is here](https://jevko.github.io/writing/2023-07-20-lambda.html).
-
-***
-
 **Lambda Calculus can be reduced down to 4 primitive operations.**
 
 The syntax for lambda calculus stripped down to these 4 operations is defined as follows: 
