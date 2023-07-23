@@ -251,10 +251,11 @@ topmost in current scope?</p>
 <code>term</code></p>
 <p>Besides being a cool pun, the name is quite descriptive. The sigma
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
-operator <em>reveals</em> to the term that follows it the next variable
-in current scope – it creates a new scope with the topmost variable
-discarded. The topmost variable in the new scope is the one introduced
-by the lambda <em>one step back</em> from the current position. So:</p>
+operator <strong>creates a new scope for the term that follows it with
+the topmost variable discarded</strong>, thus <em>revealing</em> the
+next variable to the term. The topmost variable in the new scope is the
+one introduced by the lambda <em>one step back</em> from the current
+position. So:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
 \lambda \lambda \sigma \tau
 </annotation></semantics></math></p>

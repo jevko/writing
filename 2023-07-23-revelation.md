@@ -68,7 +68,7 @@ All well and good, but how do we refer to a variable that is not topmost in curr
 
 `revelation ::=` $\boldsymbol{\sigma}$ `term`
 
-Besides being a cool pun, the name is quite descriptive. The sigma $\sigma$ operator *reveals* to the term that follows it the next variable in current scope -- it creates a new scope with the topmost variable discarded. The topmost variable in the new scope is the one introduced by the lambda *one step back* from the current position. So:
+Besides being a cool pun, the name is quite descriptive. The sigma $\sigma$ operator **creates a new scope for the term that follows it with the topmost variable discarded**, thus *revealing* the next variable to the term. The topmost variable in the new scope is the one introduced by the lambda *one step back* from the current position. So:
 
 $$
 \lambda \lambda \sigma \tau
