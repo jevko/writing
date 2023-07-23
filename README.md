@@ -12,7 +12,7 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## Selected technical
 
-[2023-07-23 "Exploring Simplified Lambda Calculus Notations: Revelation"](https://jevko.github.io/writing/2023-07-23-revelation.html) (HTML). Or [Markdown](2023-07-23-revelation.md).
+[2023-07-23 "Revelation: Lambda Calculus Reduced To Four Primitive Operations"](https://jevko.github.io/writing/2023-07-23-revelation.html) (HTML). Or [Markdown](2023-07-23-revelation.md).
 
 [2023-07-21 "Exploring Simplified Lambda Calculus Notations: Summary"](https://jevko.github.io/writing/2023-07-20-lambda.html) (HTML). Or [Markdown](2023-07-19-lambda-notation-mvp.md).
 

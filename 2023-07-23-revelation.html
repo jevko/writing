@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Darius J Chuck" />
   <meta name="dcterms.date" content="2023-07-23" />
-  <title>Exploring Simplified Lambda Calculus Notations: Revelation</title>
+  <title>Revelation: Lambda Calculus Reduced To Four Primitive Operations</title>
   <style>
     html {
       color: #1a1a1a;
@@ -175,11 +175,11 @@
 
   <p>Part I: <a href="https://jevko.github.io/writing/2023-07-20-lambda.html">"Summary"</a> (HTML).</p>
 
-  </p>Part II: <a href="https://jevko.github.io/writing/2023-07-23-revelation.html">"Revelation"</a> (HTML).</p>
+  </p>Part II: <a href="https://jevko.github.io/writing/2023-07-23-revelation.html">"Revelation: Lambda Calculus Reduced To Four Primitive Operations"</a> (HTML).</p>
 </div>
 <header id="title-block-header">
-<h1 class="title">Exploring Simplified Lambda Calculus Notations:
-Revelation</h1>
+<h1 class="title">Revelation: Lambda Calculus Reduced To Four Primitive
+Operations</h1>
 <p class="author">Darius J Chuck</p>
 <p class="date">2023-07-23</p>
 </header>
@@ -192,33 +192,37 @@ Revelation</h1>
   }
 }
 </style>
-<p><strong>Lambda Calculus can be reduced down to 4 primitive
+<p><strong>Lambda calculus can be reduced down to 4 primitive
 operations.</strong></p>
-<p>The syntax for lambda calculus stripped down to these 4 operations is
-defined as follows:</p>
+<p>First, let’s define a simplified grammar for a lambda calculus term
+that captures these operations syntactically:</p>
 <pre><code>term ::= abstraction
        | application
        | revelation
        | reference</code></pre>
-<p>The first two should be more or less familiar.</p>
+<p>A term is defined as either of the four basic operations.</p>
+<p>We don’t want to worry about parentheses, associativity, and
+precedence, so each operation shall use a distinct prefix operator with
+fixed arity. Effectively we’ll be writing our terms in Polish notation –
+the order of operations explicitly defined by the position of the
+operators, which are always evaluated left-to-right.</p>
+<p>The first two operations should be more or less familiar.</p>
 <p>Abstraction is defined like so:</p>
 <p><code>abstraction ::=</code>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛌</mi><annotation encoding="application/x-tex">\boldsymbol{\lambda}</annotation></semantics></math>
 <code>term</code></p>
-<p>It doesn’t mention variable names. It’s simply a lambda
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>
-prefixed to a term. This is the same as in N.G. de Bruijn’s namefree
-syntax.</p>
+<p>The definition doesn’t mention variable names. We only have a lambda
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>,
+which we’ll call the <strong>abstraction operator</strong>, prefixed to
+a term. This is the same as in N.G. de Bruijn’s namefree syntax.</p>
 <p>Now application is defined as:</p>
 <p><code>application ::=</code>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛂</mi><annotation encoding="application/x-tex">\boldsymbol{\alpha}</annotation></semantics></math>
 <code>term term</code></p>
-<p>We introduce an application operator, alpha
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>,
-so that we don’t have to worry about parentheses, associativity, and
-precedence. We turn the syntax into Polish notation – operations are
-done left-to-right, in the order explicitly defined by the position of
-the prefix operators.</p>
+<p>Instead of using juxtaposition, we introduce a two-argument
+<strong>application operator</strong>, alpha
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>.
+Predictably, it applies the second term to the first.</p>
 <p>With that out of the way, let’s get to the interesting operations:
 revelation and reference.</p>
 <p>As can be guessed, these replace variable references.</p>
@@ -227,10 +231,11 @@ reference:</p>
 <p><code>reference ::=</code>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛕</mi><annotation encoding="application/x-tex">\boldsymbol{\tau}</annotation></semantics></math></p>
 <p>It’s denoted simply by the letter tau
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>.
-What it does is it refers to the topmost variable in current scope.
-Normally the topmost variable is the one introduced by the lambda
-closest to the current position, i.e.:</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>τ</mi><annotation encoding="application/x-tex">\tau</annotation></semantics></math>,
+which is our zero-argument <strong>reference operator</strong>. What it
+does is it refers to the topmost variable in current scope.</p>
+<p>Normally the topmost variable is the one introduced by the lambda
+closest to the current position. That is:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
 \lambda \tau
 </annotation></semantics></math></p>
@@ -243,18 +248,19 @@ in the conventional notation. Similarly:</p>
 <p>means the same thing as
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>λ</mi><mi>y</mi><mi>.</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\lambda x.\lambda y.y</annotation></semantics></math>
 in the conventional notation.</p>
-<p>All well and good, but how do we refer to a variable that is not
-topmost in current scope?</p>
+<p>That’s all well and good, but how do we refer to a variable that is
+not topmost in current scope?</p>
 <p><strong>Here is where the revelation comes in</strong>:</p>
 <p><code>revelation ::=</code>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>𝛔</mi><annotation encoding="application/x-tex">\boldsymbol{\sigma}</annotation></semantics></math>
 <code>term</code></p>
-<p>Besides being a cool pun, the name is quite descriptive. The sigma
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
-operator <strong>creates a new scope for the term that follows it with
-the topmost variable discarded</strong>, thus <em>revealing</em> the
-next variable to the term. The topmost variable in the new scope is the
-one introduced by the lambda <em>one step back</em> from the current
+<p>Besides being a cool pun, the name is quite descriptive. The
+<strong>revelation operator</strong>, denoted by sigma
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>,
+<strong>creates a new scope for the term that follows it, with the
+topmost variable discarded</strong>, thus <em>revealing</em> the next
+variable to the term. The topmost variable in the new scope is the one
+introduced by the lambda <em>one step back</em> from the current
 position. So:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
 \lambda \lambda \sigma \tau
@@ -276,15 +282,15 @@ lambda terms in more than one way.</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
 \lambda \lambda \lambda \sigma \sigma \tau
 </annotation></semantics></math></p>
-<p>or equivalently as :</p>
+<p>or equivalently as:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>λ</mi><mi>σ</mi><mi>λ</mi><mi>σ</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">
 \lambda \lambda \sigma \lambda \sigma \tau
 </annotation></semantics></math></p>
 <p>Having
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>
-be a first-class operation, we can now choose at which points we reveal
-the interesting (or equivalently: discard the uninteresting)
-variables.</p>
+be an independent first-class operation, we can now choose the points at
+which we reveal the interesting (or equivalently: discard the
+uninteresting) variables.</p>
 <p>This starts to matter when we add applications to the mix.</p>
 <p>Consider a term like:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mi>x</mi><mi>.</mi><mi>λ</mi><mi>y</mi><mi>.</mi><mi>λ</mi><mi>z</mi><mi>.</mi><mi>x</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>x</mi><mspace width="0.167em"></mspace><mi>x</mi></mrow><annotation encoding="application/x-tex">
@@ -309,7 +315,9 @@ more efficient in terms of the number of operations performed.</p>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-reduction
 or
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-optimization</strong>.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-optimization,
+along with its inverse,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-deoptimization</strong>.</p>
 <p>Those interested in how that may look like, I direct to the <a
 href="https://xtao.org/blog/last-intro.html">Introduction to the LAST
 programming language</a>, which describes the first incarnation of this
@@ -325,15 +333,15 @@ The implementation also features
 there called S-optimization, which is an algorithm I developed that
 transforms lambda terms into fully optimized
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math>-equivalents.</p>
-<p><strong>Now not being a mathematician, I haven’t proven that these
-are indeed fully optimized. I’d appreciate if anybody could help with
+<p><strong>Not being a mathematician, I haven’t proven that these are
+indeed fully optimized. I’d appreciate if anybody could help with
 that.</strong></p>
-<p>If nothing else, I think it’s pretty cool that it’s possible to
-simplify lambda calculus like this and dig into its low-level details.
-It helps with gaining a deeper understanding of (effectively)
-foundations of mathematics. This in turn is potentially useful in areas
-that draw from that, such as computer science, theory of programming
-languages, category theory, as well as philosophy or linguistics.</p>
+<p>I think it’s pretty cool that it’s possible to simplify lambda
+calculus like this and dig into its low-level details. It helps with
+gaining a deeper understanding of (effectively) foundations of
+mathematics. This in turn is potentially useful in areas that draw from
+that, such as computer science, theory of programming languages,
+category theory, as well as philosophy or linguistics.</p>
 <p>Recently I’ve been thinking about this a lot again and finding more
 interesting insights, which I may get around to writting down at some
 point. Meanwhile I hope this writing may help some puzzle pieces snap
