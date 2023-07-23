@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Darius J Chuck" />
   <meta name="dcterms.date" content="2023-07-21" />
-  <title>[DRAFT] Terse canonical name-, paren-, and space-free syntaxes for lambda calculus</title>
+  <title>Exploring Simplified Lambda Calculus Notations: Summary</title>
   <style>
     html {
       color: #1a1a1a;
@@ -166,20 +166,14 @@
   <![endif]-->
 </head>
 <body>
+
+<a href="https://jevko.github.io/writing">jevko.github.io/writing</a>
 <header id="title-block-header">
-<h1 class="title">[DRAFT] Terse canonical name-, paren-, and space-free
-syntaxes for lambda calculus</h1>
-<p class="subtitle">[SUMMARY-ONLY]</p>
+<h1 class="title">Exploring Simplified Lambda Calculus Notations:
+Summary</h1>
 <p class="author">Darius J Chuck</p>
 <p class="date">2023-07-21</p>
 </header>
-<nav id="TOC" role="doc-toc">
-<h2 id="toc-title">Contents</h2>
-<ul>
-<li><a href="#summary" id="toc-summary">Summary</a></li>
-<li><a href="#references" id="toc-references">References</a></li>
-</ul>
-</nav>
 <style>
 @media screen {
   html {
@@ -192,17 +186,20 @@ syntaxes for lambda calculus</h1>
   .pagebreak { page-break-before: always; }
 }
 </style>
+<p><em>This is a summary of an article I’ve been writing for a few days.
+We’ll see if the rest manifests. Meanwhile, this should be interesting
+for some lambda calculus enthusiasts. Enjoy!</em></p>
 <div class="pagebreak">
 
 </div>
-<h1 id="summary">Summary</h1>
 <p><a href="#debruijn">[N.G. de Bruijn 1972]</a> introduced a way to
 eliminate names from the syntax of lambda calculus, making it much
 simpler and “easy to handle in metalingual discussion” and “easy for the
 computer and for the computer programmer”.</p>
 <p><a href="#tromp">[J. Tromp 2023]</a> incorporated and expanded upon
-this idea in his Binary Lambda Calculus (BLC) syntax, which also
-eliminates the notion of significant parentheses and spaces.</p>
+this idea in his <a href="https://tromp.github.io/cl/cl.html">Binary
+Lambda Calculus</a> (BLC) syntax, which also eliminates the notion of
+significant parentheses and spaces.</p>
 <p>BLC makes for a very good binary canonical representation of lambda
 calculus terms.</p>
 <p>In this article I define text-based equivalents which retain the
@@ -380,7 +377,7 @@ clarity.</p>
 <li>for use in software such as parsers, generators, translators,</li>
 <li>for handwritten notes.</li>
 </ul>
-<p>And for a bit of humor, here is how to encode <em>UWU</em>:</p>
+<p>BTW here is how to encode <em>UWU</em>:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>U</mi><mi>W</mi><mi>U</mi><mo>=</mo><msup><mi>α</mi><mn>2</mn></msup><mi>λ</mi><mi>α</mi><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><msup><mi>λ</mi><mn>2</mn></msup><msub><mi>τ</mi><mn>1</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub><mi>λ</mi><mi>α</mi><msub><mi>τ</mi><mn>0</mn></msub><msub><mi>τ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">UWU = α^2λατ_0τ_0λ^2τ_1τ_0τ_0λατ_0τ_0</annotation></semantics></math></p>
 <p><em>UWU</em></p>
 <h1 id="references">References</h1>

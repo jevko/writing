@@ -1,7 +1,6 @@
 ---
 author: Darius J Chuck
-title: "[DRAFT] Terse canonical name-, paren-, and space-free syntaxes for lambda calculus"
-subtitle: "[SUMMARY-ONLY]"
+title: "Exploring Simplified Lambda Calculus Notations: Summary"
 date: 2023-07-21
 ---
 
@@ -18,13 +17,13 @@ date: 2023-07-21
 }
 </style>
 
-<div class="pagebreak"> </div>
+*This is a summary of an article I've been writing for a few days. We'll see if the rest manifests. Meanwhile, this should be interesting for some lambda calculus enthusiasts. Enjoy!*
 
-# Summary
+<div class="pagebreak"> </div>
 
 [[N.G. de Bruijn 1972]](#debruijn) introduced a way to eliminate names from the syntax of lambda calculus, making it much simpler and "easy to handle in metalingual discussion" and "easy for the computer and for the computer programmer". 
 
-[[J. Tromp 2023]](#tromp) incorporated and expanded upon this idea in his Binary Lambda Calculus (BLC) syntax, which also eliminates the notion of significant parentheses and spaces.
+[[J. Tromp 2023]](#tromp) incorporated and expanded upon this idea in his [Binary Lambda Calculus](https://tromp.github.io/cl/cl.html) (BLC) syntax, which also eliminates the notion of significant parentheses and spaces.
 
 BLC makes for a very good binary canonical representation of lambda calculus terms.
 
@@ -131,7 +130,7 @@ The described syntaxes may be useful:
 * for use in software such as parsers, generators, translators, 
 * for handwritten notes.
 
-And for a bit of humor, here is how to encode *UWU*:
+BTW here is how to encode *UWU*:
 
 $$UWU = α^2λατ_0τ_0λ^2τ_1τ_0τ_0λατ_0τ_0$$
 
