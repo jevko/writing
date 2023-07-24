@@ -14,6 +14,8 @@ date: 2023-07-23
 }
 </style>
 
+![](img/2023-07-23-revelation.png)
+
 **Lambda calculus can be reduced down to 4 primitive operations.**
 
 First, let's define a simplified grammar for a lambda calculus term that captures these operations syntactically:
@@ -133,8 +135,10 @@ This equivalent encoding of the lambda term is not only shorter but more efficie
 
 Those interested in how that may look like, I direct to the [Introduction to the LAST programming language](https://xtao.org/blog/last-intro.html), which describes the first incarnation of this idea I implemented last year. The LAST language works exactly in the way described here, except it uses the letters L, A, S, and T instead of $\lambda$, $\alpha$, $\sigma$, and $\tau$. The implementation also features $\sigma$-optimization, there called S-optimization, which is an algorithm I developed that transforms lambda terms into fully optimized $\sigma$-equivalents.
 
-**Not being a mathematician, I haven't proven that these are indeed fully optimized. I'd appreciate if anybody could help with that.**
+**I haven't mathematically proven that these are indeed fully optimized. I'd appreciate if anybody could help with that.**
 
-I think it's pretty cool that it's possible to simplify lambda calculus like this and dig into its low-level details. It helps with gaining a deeper understanding of (effectively) foundations of mathematics. This in turn is potentially useful in areas that draw from that, such as computer science, theory of programming languages, category theory, as well as philosophy or linguistics.
+I think it's pretty cool that it's possible to simplify lambda calculus like this and dig into its low-level details. It helps with gaining a deeper understanding of foundations of mathematics. This in turn is potentially useful in areas that draw from that, such as computer science, theory of programming languages, category theory, as well as philosophy or linguistics.
 
 Recently I've been thinking about this a lot again and finding more interesting insights, which I may get around to writting down at some point. Meanwhile I hope this writing may help some puzzle pieces snap together in somebody else's head.
+
+![](img/2023-07-23-revelation.png)
