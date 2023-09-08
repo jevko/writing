@@ -138,6 +138,10 @@ These are marked as drafts, although the distinction is mostly dependent on my m
 
 [draft-2022-01-14-bare-xml.md](draft-2022-01-14-bare-xml.md)
 
+## Bonus
+
+In case for some reason you need to really read more of my writing (maybe it has a soothing effect on you, I don't know), I'm linking more loose, mostly nontechnical thoughts, what I call [writing exercises](https://github.com/djedr/writing).
+
 ***
 
 © 2022-2023 Darius J Chuck
