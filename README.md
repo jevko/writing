@@ -44,6 +44,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## About Jevko
 
+[2023-09-08 Whitespace in Jevko](2023-09-08-jevko-whitespace.md)
+
 [2023-07-23 Alternative useful grammar for Jevko](2023-07-23-alternative-jevko.md)
 
 [2022-02-06 Some semantic analogies to syntactic constructs in Jevko](2022-02-06-jevko-analogies.md)
