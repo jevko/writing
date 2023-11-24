@@ -12,6 +12,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## Selected technical
 
+[2023-11-24 CSS is SAAAD](2023-11-24-css-is-saaad.md)
+
 [2023-07-23 "Revelation: Lambda Calculus Reduced To Four Primitive Operations"](https://jevko.github.io/writing/2023-07-23-revelation.html) (HTML). Or [Markdown](2023-07-23-revelation.md).
 
 [2023-07-21 "Exploring Simplified Lambda Calculus Notations: Summary"](https://jevko.github.io/writing/2023-07-20-lambda.html) (HTML). Or [Markdown](2023-07-19-lambda-notation-mvp.md).
@@ -43,6 +45,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 [2022-01-04 Large numbers in JSON](2022-01-04-large-numbers-in-json.md)
 
 ## About Jevko
+
+[2023-11-23 Jevko for manual editing](2023-11-23-jevko-for-manual-editing.md)
 
 [2023-09-08 Whitespace in Jevko](2023-09-08-jevko-whitespace.md)
 
