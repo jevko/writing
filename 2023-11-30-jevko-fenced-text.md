@@ -23,7 +23,7 @@ Vanilla Jevko defines Text as follows:
 Text = *Symbol
 ```
 
-(See [the spec](https://jevko.org/spec.html) for details)
+(See [the spec](https://github.com/jevko/specifications/blob/master/spec-standard-grammar.md) for details)
 
 To add the feature, we extend the definition like so:
 
