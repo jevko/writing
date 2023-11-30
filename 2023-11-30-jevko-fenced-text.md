@@ -95,3 +95,7 @@ file = "payroll.dat"
 We can paste documents in other formats into Jevko without worrying about escaping brackets. That in itself is a significant feature for frictionless human-friendly editing which is what I always wanted Jevko to be good at.
 
 Eventually I should get to a proper spec and implementation. For now this is it.
+
+***
+
+Comments welcome [on Mastodon](https://layer8.space/@jevko/111500756700128689).
