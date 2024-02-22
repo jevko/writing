@@ -46,6 +46,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## About Jevko
 
+[2024-02-22 Jevko: year three or five or n](2024-02-22-jevko-anniversary.md)
+
 [2023-11-30 A simple backwards-compatible Jevko extension to support fenced blocks of arbitrary text](2023-11-30-jevko-fenced-text.md)
 
 [2023-11-23 Jevko for manual editing](2023-11-23-jevko-for-manual-editing.md)
