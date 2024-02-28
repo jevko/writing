@@ -78,6 +78,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## Selected nontechnical
 
+[2024-02-28 Opinion: the good the bad of generative artificial intelligence](2024-02-28-llms.md)
+
 [2023-01-30 Common Business Communication Language](2023-01-30-cbcl.md)
 
 [2023-01-29 Magic and religion in informatics](2023-01-29-magic-and-religion-in-informatics.md)
