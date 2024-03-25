@@ -73,3 +73,7 @@ Then we would not need [BEM](https://developer.mozilla.org/en-US/docs/Learn/CSS/
 * [A simpler styling model for HTML: idea and proof of concept](https://github.com/djedr/html-styling-concept)
 * [The problem with CSS (video)](https://www.youtube.com/watch?v=q0Otp_W3V0Y)
 * [CSS is SAAAD](https://jevko.github.io/writing/2023-11-24-css-is-saaad.html)
+
+# Comments
+
+[On Mastodon](https://mastodon.social/@djedr/112156998163517832).
