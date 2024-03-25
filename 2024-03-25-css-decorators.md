@@ -37,11 +37,13 @@ Should result in:
 ![blue message](img/2024-03-25-blue.gif)
 
 <details>
+
 <summary>Equivalent HTML code</summary>
 
 ```html
 <p style="outline: 1px solid red; padding: 10px 15px; font-weight: bold; color: blue;">some text</p>
 ```
+
 </details>
 
 Whereas:
@@ -55,11 +57,13 @@ Should result in:
 ![red message](img/2024-03-25-red.gif)
 
 <details>
+
 <summary>Equivalent HTML code</summary>
 
 ```html
 <p style="font-weight: bold; outline: 1px solid red; padding: 10px 15px; color: red;">some text</p>
 ```
+
 </details>
 
 Then we would not need [BEM](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Organizing#bem), OOCSS or any other systems for organizing CSS. All of these can be seen as attempts to bring something like the above to CSS.
