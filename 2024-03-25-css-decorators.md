@@ -34,7 +34,7 @@ So for example:
 
 Should result in:
 
-<p style="outline: 1px solid red; padding: 10px 15px; font-weight: bold; color: blue;">some text</p>
+![blue message](img/2024-03-25-blue.gif)
 
 <details>
 <summary>Equivalent HTML code</summary>
@@ -52,7 +52,7 @@ Whereas:
 
 Should result in:
 
-<p style="font-weight: bold; outline: 1px solid red; padding: 10px 15px; color: red;">some text</p>
+![red message](img/2024-03-25-red.gif)
 
 <details>
 <summary>Equivalent HTML code</summary>
