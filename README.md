@@ -12,6 +12,8 @@ See [djedr.github.io/writing](https://djedr.github.io/writing.html) and [xtao.or
 
 ## Selected technical
 
+[2024-03-25 Decorators: The Missing CSS Feature](2024-03-25-css-decorators.md)
+
 [2023-11-24 CSS is SAAAD](2023-11-24-css-is-saaad.md)
 
 [2023-07-23 "Revelation: Lambda Calculus Reduced To Four Primitive Operations"](https://jevko.github.io/writing/2023-07-23-revelation.html) (HTML). Or [Markdown](2023-07-23-revelation.md).
